@@ -6,7 +6,11 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "hexo server",
+    "new:post": "hexo new post",
+    "new:draft": "hexo new draft",
+    "publish:draft": "hexo publish",
+    "publish": "sh -c 'hexo clean && hexo g && hexo d && git add -A && if ! git diff --cached --quiet; then git commit -m \"chore(blog): publish\"; else echo \"No changes to commit\"; fi && git push origin main'"
   },
   "hexo": {
     "version": "7.0.0"
