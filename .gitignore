@@ -1,4 +1,41 @@
 .DS_Store
+
+# Node / Hexo
+node_modules/
+public/
+.deploy_git/
+db.json
+
+# Build outputs
+.dist/
+dist/
+coverage/
+
+# IDE & editor
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env files
+.env
+.env.local
+.env.*.local
+
+# Caches & temp
+.cache/
+.tmp/
+shokaxTemp/
+
+# OS files
+Thumbs.db
+
 Thumbs.db
 
 # Node/Hexo build outputs
