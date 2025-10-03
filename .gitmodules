@@ -1,0 +1,9 @@
+[submodule "themes/shokax_p"]
+	path = themes/shokax_p
+	url = https://github.com/theme-shoka-x/hexo-theme-shokaX.git
+[submodule "themes/yilia"]
+	path = themes/yilia
+	url = https://github.com/litten/hexo-theme-yilia.git
+[submodule "themes/yilia-plus"]
+	path = themes/yilia-plus
+	url = https://gitee.com/nate-lin/yilia-plus.git
