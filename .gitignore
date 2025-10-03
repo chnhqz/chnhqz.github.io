@@ -6,3 +6,11 @@ node_modules/
 public/
 .deploy*/
 _multiconfig.yml
+
+# IDE/editor folders
+.vscode/
+.idea/
+
+# Vim/Editor swap files
+*.swp
+*.swo

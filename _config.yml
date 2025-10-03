@@ -1,4 +1,4 @@
-﻿# Hexo Configuration
+# Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
@@ -109,8 +109,8 @@ theme: shokax
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://ykRtw3sfkiStJMnfxhPrwykKgfrzGc2Vccma@github.com/chnhqz/chnhqz.github.io.git
-  main: master
+  repo: git@github.com:chnhqz/chnhqz.github.io.git
+  branch: master
 
 
 math:
