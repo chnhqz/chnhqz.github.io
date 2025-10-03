@@ -1,564 +1,473 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"/><meta name="theme-color" content="#222"/><meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1"/><meta name="renderer" content="webkit"/><link rel="icon" type="image/ico" sizes="32x32" href="/assets/favicon.ico"/><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"/><link rel="alternate" href="/rss.xml" title="刀刀博客" type="application/rss+xml"><link rel="alternate" href="/atom.xml" title="刀刀博客" type="application/atom+xml"><link rel="alternate" type="application/json" title="刀刀博客" href="https://chnhqz.github.io/feed.json"/><link rel="preconnect" href="https://lf9-cdn-tos.bytecdntp.com"/><link rel="preconnect" href="https://at.alicdn.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CFredericka%20the%20Great:400,400italic,700,700italic%7CNoto%20Serif%20JP:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CInconsolata:400,400italic,700,700italic&display=swap&subset=latin,latin-ext" media="none" onload="this.media&#x3D;&#39;all&#39;"><link rel="stylesheet" href="/css/app.css?v=0.4.2"><link rel="modulepreload" href="/js/chunk-5NUNSAMU.js"></link><link rel="modulepreload" href="/js/chunk-JK7UX3QB.js"></link><link rel="modulepreload" href="/js/chunk-QAWHJ5B3.js"></link><link rel="modulepreload" href="/js/index.esm-6L4CBMFU.js"></link><link rel="modulepreload" href="/js/post-QRVNG3P5.js"></link><link rel="modulepreload" href="/js/quicklink-4NS4EDEP.js"></link><link rel="modulepreload" href="/js/siteInit.js"></link><link rel="preload" href="https://tva2.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg" as="image" fetchpriority="high"><link rel="preload" href="https://tva2.sinaimg.cn/large/6833939bly1gicit4jrvuj20zk0m8785.jpg" as="image" fetchpriority="high"><link rel="preload" href="https://tva2.sinaimg.cn/large/6833939bly1gicis3attqj20zk0m8k7l.jpg" as="image" fetchpriority="high"><link rel="preload" href="https://tva2.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg" as="image" fetchpriority="high"><link rel="preload" href="https://tva2.sinaimg.cn/large/6833939bly1gicitcxhpij20zk0m8hdt.jpg" as="image" fetchpriority="high"><link rel="preload" href="https://tva2.sinaimg.cn/large/6833939bly1gicit31ffoj20zk0m8naf.jpg" as="image" fetchpriority="high"><meta name="description" content="欢迎来到刀刀的笔记空间(^_^)"/><link rel="canonical" href="https://chnhqz.github.io/2024/05/05/linux/linux-md/"><title>linux.md</title><meta name="generator" content="Hexo 7.0.0"></head><body itemscope itemtype="http://schema.org/WebPage"><div id="loading"><div class="cat"><div class="body"></div><div class="head"><div class="face"></div></div><div class="foot"><div class="tummy-end"></div><div class="bottom"></div><div class="legs left"></div><div class="legs right"></div></div><div class="paw"><div class="hands left"></div><div class="hands right"></div></div></div></div><div id="container"><header id="header" itemscope itemtype="http://schema.org/WPHeader"><div class="inner"><div id="brand"><div class="pjax"><h1 itemprop="name headline">linux.md</h1><div class="meta"><span class="item" title="创建时间：2024-05-05 12:26:02"><span class="icon"><i class="ic i-calendar"></i></span><span class="text">发表于</span><time itemprop="dateCreated datePublished" datetime="2024-05-05T12:26:02+08:00">2024-05-05</time></span><span class="item" title="本文字数"><span class="icon"><i class="ic i-pen"></i></span><span class="text">本文字数</span><span>21k</span><span class="text">字</span></span><span class="item" title="阅读时长"><span class="icon"><i class="ic i-clock"></i></span><span class="text">阅读时长</span><span>19 分钟</span></span></div></div></div><nav id="nav"><div class="inner"><div class="toggle"><div class="lines" aria-label="切换导航栏"><span class="line"></span><span class="line"></span><span class="line"></span></div></div><ul class="menu"><li class="item title"><a href="/" rel="start">testName</a></li></ul><ul class="right" id="rightNav"><li class="item theme"><i class="ic i-sun"></i></li><li class="item search"><i class="ic i-search"></i></li></ul></div></nav></div><div class="pjax" id="imgs"><ul><li class="item" style="background-image: url(&quot;https://tva2.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg&quot;);"></li><li class="item" style="background-image: url(&quot;https://tva2.sinaimg.cn/large/6833939bly1gicit4jrvuj20zk0m8785.jpg&quot;);"></li><li class="item" style="background-image: url(&quot;https://tva2.sinaimg.cn/large/6833939bly1gicis3attqj20zk0m8k7l.jpg&quot;);"></li><li class="item" style="background-image: url(&quot;https://tva2.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg&quot;);"></li><li class="item" style="background-image: url(&quot;https://tva2.sinaimg.cn/large/6833939bly1gicitcxhpij20zk0m8hdt.jpg&quot;);"></li><li class="item" style="background-image: url(&quot;https://tva2.sinaimg.cn/large/6833939bly1gicit31ffoj20zk0m8naf.jpg&quot;);"></li></ul></div></header><div id="waves"><svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><main><div class="inner"><div class="pjax" id="main"><div class="article wrap"><div class="breadcrumb" itemListElement itemscope itemtype="https://schema.org/BreadcrumbList"><i class="ic i-home"></i><span><a href="/">首页</a></span></div><article class="post block" itemscope="itemscope" itemtype="http://schema.org/Article" lang="zh-CN"><link itemprop="mainEntityOfPage" href="https://chnhqz.github.io/2024/05/05/linux/linux-md/"/><span hidden="hidden" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"><meta itemprop="image" content="/assets/avatar.jpg"/><meta itemprop="name" content="hqz"/><meta itemprop="description" content="=与其感慨路难行，不如马上出发=, 欢迎来到刀刀的笔记空间(^_^)"/></span><span hidden="hidden" itemprop="publisher" itemscope="itemscope" itemtype="http://schema.org/Organization"><meta itemprop="name" content="刀刀博客"/></span><div class="body md" itemprop="articleBody"><h3 id="linux学习笔记">Linux学习笔记</h3>
-<p>以下是lInux设备添加v6的脚本</p>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"/><meta name="theme-color" content="#222"/><meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1"/><meta name="renderer" content="webkit"/><link rel="icon" type="image/ico" sizes="32x32" href="/assets/favicon.ico"/><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"/><link rel="alternate" href="/rss.xml" title="刀刀博客" type="application/rss+xml"><link rel="alternate" href="/atom.xml" title="刀刀博客" type="application/atom+xml"><link rel="alternate" type="application/json" title="刀刀博客" href="https://chnhqz.github.io/feed.json"/><link rel="preconnect" href="https://lf9-cdn-tos.bytecdntp.com"/><link rel="preconnect" href="https://at.alicdn.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CFredericka%20the%20Great:400,400italic,700,700italic%7CNoto%20Serif%20JP:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CInconsolata:400,400italic,700,700italic&display=swap&subset=latin,latin-ext" media="none" onload="this.media&#x3D;&#39;all&#39;"><link rel="stylesheet" href="/css/app.css?v=0.4.2"><link rel="modulepreload" href="/js/chunk-5NUNSAMU.js"></link><link rel="modulepreload" href="/js/chunk-JK7UX3QB.js"></link><link rel="modulepreload" href="/js/chunk-QAWHJ5B3.js"></link><link rel="modulepreload" href="/js/index.esm-6L4CBMFU.js"></link><link rel="modulepreload" href="/js/post-QRVNG3P5.js"></link><link rel="modulepreload" href="/js/quicklink-4NS4EDEP.js"></link><link rel="modulepreload" href="/js/siteInit.js"></link><link rel="preload" href="https://tva4.sinaimg.cn/large/6833939bly1gicit4jrvuj20zk0m8785.jpg" as="image" fetchpriority="high"><link rel="preload" href="https://tva4.sinaimg.cn/large/6833939bly1giciryrr3rj20zk0m8nhk.jpg" as="image" fetchpriority="high"><link rel="preload" href="https://tva4.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg" as="image" fetchpriority="high"><link rel="preload" href="https://tva4.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg" as="image" fetchpriority="high"><link rel="preload" href="https://tva4.sinaimg.cn/large/6833939bly1gicis3attqj20zk0m8k7l.jpg" as="image" fetchpriority="high"><link rel="preload" href="https://tva4.sinaimg.cn/large/6833939bly1gicit31ffoj20zk0m8naf.jpg" as="image" fetchpriority="high"><meta name="description" content="欢迎来到刀刀的笔记空间(^_^)"/><link rel="canonical" href="https://chnhqz.github.io/2024/05/05/linux/linux-md/"><title>linux.md</title><meta name="generator" content="Hexo 7.0.0"></head><body itemscope itemtype="http://schema.org/WebPage"><div id="loading"><div class="cat"><div class="body"></div><div class="head"><div class="face"></div></div><div class="foot"><div class="tummy-end"></div><div class="bottom"></div><div class="legs left"></div><div class="legs right"></div></div><div class="paw"><div class="hands left"></div><div class="hands right"></div></div></div></div><div id="container"><header id="header" itemscope itemtype="http://schema.org/WPHeader"><div class="inner"><div id="brand"><div class="pjax"><h1 itemprop="name headline">linux.md</h1><div class="meta"><span class="item" title="创建时间：2024-05-05 12:26:02"><span class="icon"><i class="ic i-calendar"></i></span><span class="text">发表于</span><time itemprop="dateCreated datePublished" datetime="2024-05-05T12:26:02+08:00">2024-05-05</time></span><span class="item" title="本文字数"><span class="icon"><i class="ic i-pen"></i></span><span class="text">本文字数</span><span>21k</span><span class="text">字</span></span><span class="item" title="阅读时长"><span class="icon"><i class="ic i-clock"></i></span><span class="text">阅读时长</span><span>19 分钟</span></span></div></div></div><nav id="nav"><div class="inner"><div class="toggle"><div class="lines" aria-label="切换导航栏"><span class="line"></span><span class="line"></span><span class="line"></span></div></div><ul class="menu"><li class="item title"><a href="/" rel="start">testName</a></li></ul><ul class="right" id="rightNav"><li class="item theme"><i class="ic i-sun"></i></li><li class="item search"><i class="ic i-search"></i></li></ul></div></nav></div><div class="pjax" id="imgs"><ul><li class="item" style="background-image: url(&quot;https://tva4.sinaimg.cn/large/6833939bly1gicit4jrvuj20zk0m8785.jpg&quot;);"></li><li class="item" style="background-image: url(&quot;https://tva4.sinaimg.cn/large/6833939bly1giciryrr3rj20zk0m8nhk.jpg&quot;);"></li><li class="item" style="background-image: url(&quot;https://tva4.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg&quot;);"></li><li class="item" style="background-image: url(&quot;https://tva4.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg&quot;);"></li><li class="item" style="background-image: url(&quot;https://tva4.sinaimg.cn/large/6833939bly1gicis3attqj20zk0m8k7l.jpg&quot;);"></li><li class="item" style="background-image: url(&quot;https://tva4.sinaimg.cn/large/6833939bly1gicit31ffoj20zk0m8naf.jpg&quot;);"></li></ul></div></header><div id="waves"><svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><main><div class="inner"><div class="pjax" id="main"><div class="article wrap"><div class="breadcrumb" itemListElement itemscope itemtype="https://schema.org/BreadcrumbList"><i class="ic i-home"></i><span><a href="/">首页</a></span></div><article class="post block" itemscope="itemscope" itemtype="http://schema.org/Article" lang="zh-CN"><link itemprop="mainEntityOfPage" href="https://chnhqz.github.io/2024/05/05/linux/linux-md/"/><span hidden="hidden" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"><meta itemprop="image" content="/assets/avatar.jpg"/><meta itemprop="name" content="hqz"/><meta itemprop="description" content="=与其感慨路难行，不如马上出发=, 欢迎来到刀刀的笔记空间(^_^)"/></span><span hidden="hidden" itemprop="publisher" itemscope="itemscope" itemtype="http://schema.org/Organization"><meta itemprop="name" content="刀刀博客"/></span><div class="body md" itemprop="articleBody"><h3 id="linux学习笔记"><a class="markdownIt-Anchor" href="#linux学习笔记">#</a> Linux 学习笔记</h3>
+<p>以下是 lInux 设备添加 v6 的脚本</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">curl -s https://install.zerotier.com | sudo bash</span><br><span class="line">cd /var/lib/zerotier-one</span><br><span class="line">rm -rf planet</span><br><span class="line">wget http://blog.nomao.top/planet -O planet</span><br><span class="line">service zerotier-one restart</span><br><span class="line"></span><br><span class="line">sudo zerotier-cli join 93caa675b035c9d7</span><br><span class="line">sudo zerotier-cli set 93caa675b035c9d7 allowGlobal=true</span><br><span class="line">sudo zerotier-cli set 93caa675b035c9d7 allowDefault=1</span><br></pre></td></tr></table></figure>
-<h3 id="linux命令">2.Linux命令</h3>
-<h4 id="linux系统的目录结构">2.1Linux系统的目录结构</h4>
-<p>Linux的目录结构是一个型结构，没有盘符的概念，只有一个根目录/，所有的文件都在它下面。</p>
-<p><img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-26 11.50.33.png" alt="截屏2023-12-26 11.50.33" style="zoom:50%;" /></p>
-<p>在Linux系统中，路径之间的层级关系，使用
-<code>:/</code>来表示。Windows则是 <code>:\</code>。</p>
-<h4 id="linux命令入门">2.2Linux命令入门</h4>
-<h5 id="linux命令基础">2.2.1Linux命令基础</h5>
-<p>命令行：即Linux终端（Terminal），是一种命令提示符页面。以春“字符”的形式操作系统，可以使用各种字符化命令对系统发出操作指令。</p>
-<p>命令：即Linux程序。一个命令就是一个Linux的程序。命令没有图形化页面，可以在命令行（终端中）提供字符化反馈</p>
-<p><img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-26 13.16.32.png" alt="截屏2023-12-26 13.16.32" style="zoom:50%;" /></p>
-<p>学习Linux就是在命令行界面去熟练的使用Linux的各类命令。</p>
-<p>无论是什么命令，用于什么用途，在Linux中，命令有其通用的形式：<code>command [-options] [parameter]</code></p>
+<h3 id="2linux命令"><a class="markdownIt-Anchor" href="#2linux命令">#</a> 2.Linux 命令</h3>
+<h4 id="21linux系统的目录结构"><a class="markdownIt-Anchor" href="#21linux系统的目录结构">#</a> 2.1Linux 系统的目录结构</h4>
+<p>Linux 的目录结构是一个型结构，没有盘符的概念，只有一个根目录 /，所有的文件都在它下面。</p>
+<img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-26 11.50.33.png" alt="截屏2023-12-26 11.50.33" style="zoom:50%;" />
+<p>在 Linux 系统中，路径之间的层级关系，使用  <code>:/</code>  来表示。Windows 则是  <code>:\</code> 。</p>
+<h4 id="22linux命令入门"><a class="markdownIt-Anchor" href="#22linux命令入门">#</a> 2.2Linux 命令入门</h4>
+<h5 id="221linux命令基础"><a class="markdownIt-Anchor" href="#221linux命令基础">#</a> 2.2.1Linux 命令基础</h5>
+<p>命令行：即 Linux 终端（Terminal），是一种命令提示符页面。以春 “字符” 的形式操作系统，可以使用各种字符化命令对系统发出操作指令。</p>
+<p>命令：即 Linux 程序。一个命令就是一个 Linux 的程序。命令没有图形化页面，可以在命令行（终端中）提供字符化反馈</p>
+<img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-26 13.16.32.png" alt="截屏2023-12-26 13.16.32" style="zoom:50%;" />
+<p>学习 Linux 就是在命令行界面去熟练的使用 Linux 的各类命令。</p>
+<p>无论是什么命令，用于什么用途，在 Linux 中，命令有其通用的形式： <code>command [-options] [parameter]</code></p>
 <ul>
-<li><code>comman:d</code> 命令本身</li>
-<li><code>-options:</code>
-【可选，非必填】命令的一些选项，可以通过选项控制命令的行为细节</li>
-<li><code>parameter:</code>
-【可选，非必填】命令的参数，多数用于命令的指向目标等</li>
+<li><code>comman:d</code>  命令本身</li>
+<li><code>-options:</code>  【可选，非必填】命令的一些选项，可以通过选项控制命令的行为细节</li>
+<li><code>parameter:</code>  【可选，非必填】命令的参数，多数用于命令的指向目标等</li>
 </ul>
 <blockquote>
-<p><code>ls -l /home/itheima</code> ls是命令本身，-l是选项，
-/home/itheima是参数</p>
+<p><code>ls -l /home/itheima</code>  ls 是命令本身，-l 是选项， /home/itheima 是参数</p>
 </blockquote>
-<h5 id="ls命令入门">2.2.2ls命令入门</h5>
-<p><code>ls</code>
-命令的作用是列出目录下的内容，语法细节:<code>ls [-a -l -h] [linux路径]</code>
-。当不使用选项和参数，直接使用ls命令本体，表示：以平铺形式，列出当前工作目录下的内容。</p>
-<p><img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-26 14.59.20.png" alt="截屏2023-12-26 14.59.20" style="zoom:50%;" /></p>
-<p>Linux系统的命令行终端，在启动的时候，默认会加载：</p>
+<h5 id="222ls命令入门"><a class="markdownIt-Anchor" href="#222ls命令入门">#</a> 2.2.2ls 命令入门</h5>
+<p><code>ls</code>  命令的作用是列出目录下的内容，语法细节: <code>ls [-a -l -h] [linux路径]</code>  。当不使用选项和参数，直接使用 ls 命令本体，表示：以平铺形式，列出当前工作目录下的内容。</p>
+<img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-26 14.59.20.png" alt="截屏2023-12-26 14.59.20" style="zoom:50%;" />
+<p>Linux 系统的命令行终端，在启动的时候，默认会加载：</p>
 <ul>
-<li>当前登录用户的HOME目录作为当前工作目录，所以ls命令列出的是HOME目录的内容</li>
-<li>HOME目录：每个Linux操作用户在Linux系统的个人账户目录，路径在
-:<code>/home/用户名</code></li>
+<li>当前登录用户的 HOME 目录作为当前工作目录，所以 ls 命令列出的是 HOME 目录的内容</li>
+<li>HOME 目录：每个 Linux 操作用户在 Linux 系统的个人账户目录，路径在 : <code>/home/用户名</code></li>
 </ul>
-<h5 id="ls命令的参数和选项">2.2.3ls命令的参数和选项</h5>
+<h5 id="223ls命令的参数和选项"><a class="markdownIt-Anchor" href="#223ls命令的参数和选项">#</a> 2.2.3ls 命令的参数和选项</h5>
 <ul>
-<li><code>-a</code>
-选项，表示：all的意思，即列出全部文件（包含隐藏的文件/文件夹）</li>
-<li><code>-l</code>
-选项，表示：以列表（竖向排列）的形式展示内容，并展示更多信息</li>
-<li><code>-h</code>
-选项，表示：以易于阅读的形式，列出文件大小，如K、M、G。注意：<code>-h</code>
-选项必须搭配 <code>-l</code>一起使用。</li>
+<li><code>-a</code>  选项，表示：all 的意思，即列出全部文件（包含隐藏的文件 / 文件夹）</li>
+<li><code>-l</code>  选项，表示：以列表（竖向排列）的形式展示内容，并展示更多信息</li>
+<li><code>-h</code>  选项，表示：以易于阅读的形式，列出文件大小，如 K、M、G。注意： <code>-h</code>  选项必须搭配  <code>-l</code>  一起使用。</li>
 </ul>
-<p>ls命令选项的组合使用 <code>ls -a -l</code></p>
-<h4 id="目录切换相关命令cdpwd">2.3目录切换相关命令（cd/pwd）</h4>
-<h5 id="cd-切换工作目录">2.3.1cd 切换工作目录</h5>
-<p>当Linux终端（命令行）打开的时候，会默认以用户的HOME目录作为当前的工像目录</p>
-<p>我们可以通过cd命令，更改当前所在的工作目录。</p>
-<p><code>cd</code>命令来自英文：Change Directory</p>
-<p>浯法：cd[Linux路径］</p>
+<p>ls 命令选项的组合使用  <code>ls -a -l</code></p>
+<h4 id="23目录切换相关命令cdpwd"><a class="markdownIt-Anchor" href="#23目录切换相关命令cdpwd">#</a> 2.3 目录切换相关命令（cd/pwd）</h4>
+<h5 id="231cd-切换工作目录"><a class="markdownIt-Anchor" href="#231cd-切换工作目录">#</a> 2.3.1cd 切换工作目录</h5>
+<p>当 Linux 终端（命令行）打开的时候，会默认以用户的 HOME 目录作为当前的工像目录</p>
+<p>我们可以通过 cd 命令，更改当前所在的工作目录。</p>
+<p><code>cd</code>  命令来自英文：Change Directory</p>
+<p>浯法：cd [Linux 路径］</p>
 <ul>
-<li>﻿<code>cd</code>命令无需选项，只有参数，表示要切换到哪个目录下</li>
-<li>﻿<code>﻿cd</code>命令直接执行，不写参数，表示回到用户的HOME目录</li>
+<li><code>cd</code>  命令无需选项，只有参数，表示要切换到哪个目录下</li>
+<li><code>﻿cd</code>  命令直接执行，不写参数，表示回到用户的 HOME 目录</li>
 </ul>
-<h5 id="pwd-查看当前工作目录">2.3.2pwd 查看当前工作目录</h5>
-<p>通过<code>ls</code>来验证当前的工作目录，其实是不恰当的。</p>
-<p>我们可以通过<code>pwd</code>命令，来查看当前所在的工作目录。</p>
-<p><code>pwd</code>命令来自：Print work Directory</p>
-<p>语法：<code>pwd</code></p>
+<h5 id="232pwd-查看当前工作目录"><a class="markdownIt-Anchor" href="#232pwd-查看当前工作目录">#</a> 2.3.2pwd 查看当前工作目录</h5>
+<p>通过 <code>ls</code>  来验证当前的工作目录，其实是不恰当的。</p>
+<p>我们可以通过 <code>pwd</code>  命令，来查看当前所在的工作目录。</p>
+<p><code>pwd</code>  命令来自：Print work Directory</p>
+<p>语法： <code>pwd</code></p>
 <ul>
-<li><code>pwd</code>命令，无选项，无参数，直接输入<code>pwd</code>即可</li>
+<li><code>pwd</code>  命令，无选项，无参数，直接输入 <code>pwd</code>  即可</li>
 </ul>
-<h4
-id="相对路径绝对路径和特殊路径符">2.4相对路径、绝对路径和特殊路径符</h4>
-<h5 id="相对路径和绝对路径">2.4.1相对路径和绝对路径</h5>
+<h4 id="24相对路径-绝对路径和特殊路径符"><a class="markdownIt-Anchor" href="#24相对路径-绝对路径和特殊路径符">#</a> 2.4 相对路径、绝对路径和特殊路径符</h4>
+<h5 id="241相对路径和绝对路径"><a class="markdownIt-Anchor" href="#241相对路径和绝对路径">#</a> 2.4.1 相对路径和绝对路径</h5>
 <ul>
-<li>绝对路径：以根目录为起点，描述路径的一种写法，路径描述以<code>/</code>开头</li>
-<li>相对路径：以当前目录为起点，描述路径的一种写法，路径描述无需以<code>/</code>开头</li>
+<li>绝对路径：以根目录为起点，描述路径的一种写法，路径描述以 <code>/</code>  开头</li>
+<li>相对路径：以当前目录为起点，描述路径的一种写法，路径描述无需以 <code>/</code>  开头</li>
 </ul>
-<h5 id="特殊路径符">2.4.2特殊路径符</h5>
-<p><img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-26 17.03.10.png" alt="截屏2023-12-26 17.03.10" style="zoom:50%;" /></p>
-<p>如图，当前工作目录处于：<code>/home/itheima/Desktop</code></p>
-<p>向上回退一级，切换目录到<code>/home/itheima</code>中</p>
+<h5 id="242特殊路径符"><a class="markdownIt-Anchor" href="#242特殊路径符">#</a> 2.4.2 特殊路径符</h5>
+<img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-26 17.03.10.png" alt="截屏2023-12-26 17.03.10" style="zoom:50%;" />
+<p>如图，当前工作目录处于： <code>/home/itheima/Desktop</code></p>
+<p>向上回退一级，切换目录到 <code>/home/itheima</code>  中</p>
 <ul>
-<li>可以直接通过<code>cd</code>，即可回到HOME目录</li>
+<li>可以直接通过 <code>cd</code> ，即可回到 HOME 目录</li>
 <li>也可以通过特殊路径符来完成</li>
 </ul>
 <p>特殊路径符：</p>
 <ul>
-<li><code>.</code> 表示当前目录，比如：<code>cd ./Desktop</code>
-表示切换到当前目录下的<code>Desktop</code> 目录内，和
-<code>cd Desktop</code> 效果一致</li>
-<li><code>..</code> 表示上一级目录，比如：<code>cd..</code>
-即可切换到上一级目录，<code>cd ../..</code> 切换到上二级的目录</li>
-<li><code>~</code> 表示HOME目录，比如：<code>cd~</code>
-即可切换到HOME目录或<code>cd ~/Desktop</code>
-，切换到HOME内的<code>Desktop</code> 目录</li>
+<li><code>.</code>  表示当前目录，比如： <code>cd ./Desktop</code>  表示切换到当前目录下的 <code>Desktop</code>  目录内，和  <code>cd Desktop</code>  效果一致</li>
+<li><code>..</code>  表示上一级目录，比如： <code>cd..</code>  即可切换到上一级目录， <code>cd ../..</code>  切换到上二级的目录</li>
+<li><code>~</code>  表示 HOME 目录，比如： <code>cd~</code>  即可切换到 HOME 目录或 <code>cd ~/Desktop</code>  ，切换到 HOME 内的 <code>Desktop</code>  目录</li>
 </ul>
-<h4 id="mkdir-命令">2.5<code>mkdir</code> 命令</h4>
-<p>通过 <code>mkdir</code> 命令可以创建新的目录（文件夹）</p>
-<p><code>mkdir</code> 来自英文：Make Directory</p>
-<p>语法：<code>mkdir [-p] Linux路径</code></p>
+<h4 id="25mkdir-命令"><a class="markdownIt-Anchor" href="#25mkdir-命令">#</a> 2.5 <code>mkdir</code>  命令</h4>
+<p>通过  <code>mkdir</code>  命令可以创建新的目录（文件夹）</p>
+<p><code>mkdir</code>  来自英文：Make Directory</p>
+<p>语法： <code>mkdir [-p] Linux路径</code></p>
 <ul>
-<li>参数必填，表示Linux路径，即要创建的文件夹的路径，相对路径或绝对路径均可</li>
-<li><code>-p</code>
-选项可选，表示自动创建不存在的父目录，适用于创建连续多层级的目录</li>
+<li>参数必填，表示 Linux 路径，即要创建的文件夹的路径，相对路径或绝对路径均可</li>
+<li><code>-p</code>  选项可选，表示自动创建不存在的父目录，适用于创建连续多层级的目录</li>
 </ul>
 <blockquote>
-<p>⚠️：创建文件夹需要修改权限，确保操作均在HOME目录内，不要在HOME外操作。涉及到权限问题，HOME外无法成功。</p>
+<p>⚠️：创建文件夹需要修改权限，确保操作均在 HOME 目录内，不要在 HOME 外操作。涉及到权限问题，HOME 外无法成功。</p>
 </blockquote>
-<h4 id="文件操作命令">2.6文件操作命令</h4>
-<h5 id="touch-创建文件">2.6.1<code>touch</code> 创建文件</h5>
-<p>可以通过<code>touch</code> 命令创建文件</p>
-<p>语法：<code>touch Linux路径</code></p>
-<p><code>touch</code>
-命令无选项，参数必填，表示要创建的文件路径，相对、绝对、特殊路径符均可以使用</p>
-<p><img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-26 17.46.02.png" alt="截屏2023-12-26 17.46.02" style="zoom:50%;" /></p>
+<h4 id="26文件操作命令"><a class="markdownIt-Anchor" href="#26文件操作命令">#</a> 2.6 文件操作命令</h4>
+<h5 id="261touch-创建文件"><a class="markdownIt-Anchor" href="#261touch-创建文件">#</a> 2.6.1 <code>touch</code>  创建文件</h5>
+<p>可以通过 <code>touch</code>  命令创建文件</p>
+<p>语法： <code>touch Linux路径</code></p>
+<p><code>touch</code>  命令无选项，参数必填，表示要创建的文件路径，相对、绝对、特殊路径符均可以使用</p>
+<img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-26 17.46.02.png" alt="截屏2023-12-26 17.46.02" style="zoom:50%;" />
 <blockquote>
-<p>文件夹与文件的区别，使用<code>ls -l</code>
-命令，发现文件夹是<code>d</code>开头，文件是<code>-</code>开头</p>
+<p>文件夹与文件的区别，使用 <code>ls -l</code>  命令，发现文件夹是 <code>d</code>  开头，文件是 <code>-</code>  开头</p>
 </blockquote>
-<h5 id="cat-命令查看文件内容">2.6.2<code>cat</code>
-命令查看文件内容</h5>
-<p>可以通过<code>cat</code> 查看内容</p>
-<p>语法：<code>cat Linux路径</code></p>
-<p><code>cat</code>
-同样没有选项，只有必填参数，参数表示：被查看的文件路径，相对、绝对、特殊路径符都可以使用</p>
-<p><img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-26 17.55.17.png" alt="截屏2023-12-26 17.55.17" style="zoom:50%;" /></p>
-<h5 id="more-命令查看文件内容">2.6.3<code>more</code>
-命令查看文件内容</h5>
-<p><code>more</code> 命令同样可以查看文件内容，同<code>cat</code>
-不同的是：</p>
+<h5 id="262cat-命令查看文件内容"><a class="markdownIt-Anchor" href="#262cat-命令查看文件内容">#</a> 2.6.2 <code>cat</code>  命令查看文件内容</h5>
+<p>可以通过 <code>cat</code>  查看内容</p>
+<p>语法： <code>cat Linux路径</code></p>
+<p><code>cat</code>  同样没有选项，只有必填参数，参数表示：被查看的文件路径，相对、绝对、特殊路径符都可以使用</p>
+<img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-26 17.55.17.png" alt="截屏2023-12-26 17.55.17" style="zoom:50%;" />
+<h5 id="263more-命令查看文件内容"><a class="markdownIt-Anchor" href="#263more-命令查看文件内容">#</a> 2.6.3 <code>more</code>  命令查看文件内容</h5>
+<p><code>more</code>  命令同样可以查看文件内容，同 <code>cat</code>  不同的是：</p>
 <ul>
-<li><code>cat</code> 是直接将内容全部显示出来</li>
-<li><code>more</code> 支持翻页，如果文件内容过多，可以一页页的展示</li>
+<li><code>cat</code>  是直接将内容全部显示出来</li>
+<li><code>more</code>  支持翻页，如果文件内容过多，可以一页页的展示</li>
 </ul>
-<p>语法：<code>more Linux路径</code></p>
-<p><code>more</code>
-同样没有选项，只有必填参数，参数表示：被查看的文件路径，相对、绝对、特殊路径都可以使用</p>
-<h5 id="cp-复制文件文件夹">2.6.4 <code>cp</code> 复制文件、文件夹</h5>
-<p><code>cp</code>
-命令可以用于复制文件，<code>cp</code>命令来自英文单词：copy</p>
-<p>语法：<code>cp [-r] 参数1 参数2</code></p>
+<p>语法： <code>more Linux路径</code></p>
+<p><code>more</code>  同样没有选项，只有必填参数，参数表示：被查看的文件路径，相对、绝对、特殊路径都可以使用</p>
+<h5 id="264-cp-复制文件-文件夹"><a class="markdownIt-Anchor" href="#264-cp-复制文件-文件夹">#</a> 2.6.4  <code>cp</code>  复制文件、文件夹</h5>
+<p><code>cp</code>  命令可以用于复制文件 \ 文件夹， <code>cp</code>  命令来自英文单词：copy</p>
+<p>语法： <code>cp [-r] 参数1 参数2</code></p>
 <ul>
-<li>﻿<code>-r</code>选项，可选，用于复制文件夹使用，表示递归</li>
-<li>﻿<code>﻿参数1</code>，Linux路径，表示被复制的文件或文件夹</li>
-<li>﻿<code>﻿参数2</code>，Linux路径，表示要复制去的地方</li>
+<li><code>-r</code>  选项，可选，用于复制文件夹使用，表示递归</li>
+<li><code>﻿参数1</code> ，Linux 路径，表示被复制的文件或文件夹</li>
+<li><code>﻿参数2</code> ，Linux 路径，表示要复制去的地方</li>
 </ul>
-<h5 id="mv-移动文件文件夹">2.6.5<code>mv</code> 移动文件、文件夹</h5>
-<p><code>mv</code>命令可以用于移动文件，<code>mv</code>命令来自英文单词：move</p>
-<p>语法：<code>mv 参数1 参数2</code></p>
+<h5 id="265mv-移动文件-文件夹"><a class="markdownIt-Anchor" href="#265mv-移动文件-文件夹">#</a> 2.6.5 <code>mv </code>  移动文件、文件夹</h5>
+<p><code>mv</code>  命令可以用于移动文件 \ 文件夹， <code>mv</code>  命令来自英文单词：move</p>
+<p>语法： <code>mv 参数1 参数2</code></p>
 <ul>
-<li>﻿<code>参数1</code>，Linux路径，表示被移动的文件或文件夹</li>
-<li>﻿<code>﻿参数2</code>，Linux路径，表示要移动去的地方，如果目标不存在，则进行改名，确保目标存在</li>
+<li><code>参数1</code> ，Linux 路径，表示被移动的文件或文件夹</li>
+<li><code>﻿参数2</code> ，Linux 路径，表示要移动去的地方，如果目标不存在，则进行改名，确保目标存在</li>
 </ul>
-<h5 id="rm-删除文件文件夹">2.6.6<code>rm</code> 删除文件、文件夹</h5>
-<p><code>rm</code>命令可用于删除文件、文件夹。<code>rm</code>命令来自英文单词：remove</p>
-<p>语法：<code>rm [-r -f] 参数1 参数2 . . . . . 参数N</code></p>
+<h5 id="266rm-删除文件-文件夹"><a class="markdownIt-Anchor" href="#266rm-删除文件-文件夹">#</a> 2.6.6 <code>rm</code>  删除文件、文件夹</h5>
+<p><code>rm</code>  命令可用于删除文件、文件夹。 <code>rm</code>  命令来自英文单词：remove</p>
+<p>语法： <code>rm [-r -f] 参数1 参数2 . . . . . 参数N</code></p>
 <ul>
-<li>﻿同<code>cp</code>命令一样，<code>-r</code>选项用于删除文件夹</li>
-<li>﻿<code>-f</code>表示force，强制删除（不会弹出提示确认信息）
+<li>同 <code>cp</code>  命令一样， <code>-r</code>  选项用于删除文件夹</li>
+<li><code>-f</code>  表示 force，强制删除（不会弹出提示确认信息）
 <ul>
-<li>﻿普通用户删除内容不会弹出提示，只有root管理员用户删除内容会有提示</li>
-<li>﻿所以一般普通用户用不到-选项</li>
-</ul></li>
-<li>﻿参数1、参数2、………参数N
-表示要州除的文件或文件夹路径，按照空格隔开</li>
+<li>普通用户删除内容不会弹出提示，只有 root 管理员用户删除内容会有提示</li>
+<li>所以一般普通用户用不到 - 选项</li>
 </ul>
-<p><code>rm</code>命令支持通配符<code>*</code>，用来做模糊匹配</p>
-<ul>
-<li>﻿符号<code>*</code> 表示通配符，即匹配任意内容（包含空），示例：</li>
-<li>﻿<code>﻿test*</code>，表示匹配任何以<code>test</code>开头的内容</li>
-<li>﻿<code>*test</code>，表示匹配任何以<code>test</code>结尾的内容</li>
-<li>﻿<code>﻿*test*</code>，表示匹配任何包含<code>test</code>的内容</li>
+</li>
+<li>参数 1、参数 2、……… 参数 N 表示要州除的文件或文件夹路径，按照空格隔开</li>
 </ul>
-<p><code>-f</code>
-可以通过<code>su -root</code>，并输入密码<code>123456</code>
-临时切换到<code>root</code> 用户体验。</p>
-<h5 id="which-查找命令的程序文件">2.6.7<code>which</code>
-查找命令的程序文件</h5>
-<p>我们在前面学习到的Linux命令，起始它们的本体就是一个个的二进制可执行程序。和Windows系统中的.exe文件，是一个意思。</p>
-<p>我们可以通过<code>which</code>命令，查看所使用的一系列命令的程序文件存放在哪里。</p>
-<p>语法：<code>which 要查找的命令</code></p>
-<h5 id="find-查找指定文件">2.6.8<code>find</code> 查找指定文件</h5>
-<p>语法：<code>find 起始路径 -name “被查找文件名”</code>
-这里查找文件也可以使用通配符。</p>
-<p><code>find</code> 可以按文件大小查找文件</p>
-<p>语法：<code>find 起始路径 -size +｜-n [kMG]</code></p>
+<p><code>rm</code>  命令支持通配符 <code> *</code> ，用来做模糊匹配</p>
 <ul>
-<li><code>+、-</code> 表示大于和小于</li>
-<li><code>n</code> 表示大小数字</li>
-<li><code>kMG</code>
-表示大小单位，<code>k</code>（小写字母）表示<code>kb</code>，<code>M</code>
-表示 <code>MB</code> ，<code>G</code>表示<code>GB</code>。</li>
+<li>符号 <code>*</code>  表示通配符，即匹配任意内容（包含空），示例：</li>
+<li><code>﻿test*</code> ，表示匹配任何以 <code>test</code>  开头的内容</li>
+<li><code>*test</code> ，表示匹配任何以 <code>test</code>  结尾的内容</li>
+<li><code>﻿*test*</code> ，表示匹配任何包含 <code>test</code>  的内容</li>
 </ul>
-<p><img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-27 20.14.03.png" alt="截屏2023-12-27 20.14.03" style="zoom:50%;" /></p>
-<h5 id="grep-过滤文件内容">2.6.8<code>grep</code> 过滤文件内容</h5>
-<p>可以通过<code>grep</code> 命令，从文件中通过关键字过滤文件行。</p>
-<p>语法：<code>grep [-n] 关键字 文件路径</code></p>
+<p><code>-f</code>  可以通过 <code>su -root</code> ，并输入密码 <code>123456</code>  临时切换到 <code>root</code>  用户体验。</p>
+<h5 id="267which-查找命令的程序文件"><a class="markdownIt-Anchor" href="#267which-查找命令的程序文件">#</a> 2.6.7 <code>which</code>  查找命令的程序文件</h5>
+<p>我们在前面学习到的 Linux 命令，起始它们的本体就是一个个的二进制可执行程序。和 Windows 系统中的.exe 文件，是一个意思。</p>
+<p>我们可以通过 <code>which</code>  命令，查看所使用的一系列命令的程序文件存放在哪里。</p>
+<p>语法： <code>which 要查找的命令</code></p>
+<h5 id="268find-查找指定文件"><a class="markdownIt-Anchor" href="#268find-查找指定文件">#</a> 2.6.8 <code>find</code>  查找指定文件</h5>
+<p>语法： <code>find 起始路径 -name “被查找文件名”</code>  这里查找文件也可以使用通配符。</p>
+<p><code>find</code>  可以按文件大小查找文件</p>
+<p>语法： <code>find 起始路径 -size +｜-n [kMG]</code></p>
 <ul>
-<li>选项<code>-n</code>，可选，表示在结果中显示匹配的行的行号</li>
-<li>参数，关键字，必填，表示过滤的关键字，带有空格或其它特殊符号，建议使用“”将关键字包围起来。</li>
+<li><code>+、-</code>  表示大于和小于</li>
+<li><code>n</code>  表示大小数字</li>
+<li><code>kMG</code>  表示大小单位， <code>k</code> （小写字母）表示 <code>kb</code> ， <code>M</code>  表示  <code>MB</code>  ， <code>G</code>  表示 <code>GB</code> 。</li>
+</ul>
+<img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-27 20.14.03.png" alt="截屏2023-12-27 20.14.03" style="zoom:50%;" />
+<h5 id="268grep-过滤文件内容"><a class="markdownIt-Anchor" href="#268grep-过滤文件内容">#</a> 2.6.8 <code>grep</code>  过滤文件内容</h5>
+<p>可以通过 <code>grep</code>  命令，从文件中通过关键字过滤文件行。</p>
+<p>语法： <code>grep [-n] 关键字 文件路径</code></p>
+<ul>
+<li>选项 <code>-n</code> ，可选，表示在结果中显示匹配的行的行号</li>
+<li>参数，关键字，必填，表示过滤的关键字，带有空格或其它特殊符号，建议使用 “” 将关键字包围起来。</li>
 <li>参数，文件路径，必填，表示要过滤内容的文件路径，可作为内容输入端口。</li>
 </ul>
-<h5 id="wc-统计内容数量">2.6.9<code>wc</code> 统计内容数量</h5>
-<p>可以通过<code>wc</code> 命令统计文件的行数、单词数量等</p>
-<p>语法：<code>wc [-c -m -l -w] 文件路径</code></p>
+<h5 id="269wc-统计内容数量"><a class="markdownIt-Anchor" href="#269wc-统计内容数量">#</a> 2.6.9 <code>wc</code>  统计内容数量</h5>
+<p>可以通过 <code>wc</code>  命令统计文件的行数、单词数量等</p>
+<p>语法： <code>wc [-c -m -l -w] 文件路径</code></p>
 <ul>
-<li>选项，<code>-c</code>，统计bytes数量</li>
-<li>选项，<code>-m</code>，统计字符数量</li>
-<li>选项，<code>-l</code>，统计行数</li>
-<li>选项，<code>-w</code>，统计单词数量</li>
-<li>参数，<code>文件路径</code>，被统计的文件，可作为内容输入端口</li>
+<li>选项， <code>-c</code> ，统计 bytes 数量</li>
+<li>选项， <code>-m</code> ，统计字符数量</li>
+<li>选项， <code>-l</code> ，统计行数</li>
+<li>选项， <code>-w</code> ，统计单词数量</li>
+<li>参数， <code>文件路径</code> ，被统计的文件，可作为内容输入端口</li>
 </ul>
-<h5 id="管道符">2.6.10 <code>管道符</code></h5>
+<h5 id="2610-管道符"><a class="markdownIt-Anchor" href="#2610-管道符">#</a> 2.6.10  <code>管道符</code></h5>
 <p>管道符的含义是：将管道符左边命令的结果，作为右边命令的输入</p>
-<p><img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-27 20.42.07.png" alt="截屏2023-12-27 20.42.07" style="zoom:50%;" /></p>
+<img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-27 20.42.07.png" alt="截屏2023-12-27 20.42.07" style="zoom:50%;" />
 <p>如上图：</p>
 <ul>
-<li><code>cat itheima.txt</code> 的输出结果（文件内容）</li>
-<li>作为右边<code>grep</code>命令的输入（被过滤文件）</li>
+<li><code>cat itheima.txt</code>  的输出结果（文件内容）</li>
+<li>作为右边 <code>grep</code>  命令的输入（被过滤文件）</li>
 </ul>
-<h5 id="echo-输出内容">2.6.11 <code>echo</code> 输出内容</h5>
-<p>可以使用<code>echo</code>命令在命令行内输出制定内容</p>
-<p>语法：<code>echo 输出的内容</code></p>
+<h5 id="2611-echo-输出内容"><a class="markdownIt-Anchor" href="#2611-echo-输出内容">#</a> 2.6.11  <code>echo</code>  输出内容</h5>
+<p>可以使用 <code>echo</code>  命令在命令行内输出制定内容</p>
+<p>语法： <code>echo 输出的内容</code></p>
 <ul>
-<li>无需选项，又有一个参试，表示要输出的内容，复杂内容可以用""包围</li>
-<li><figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-27%2021.06.13.png"
-alt="截屏2023-12-27 21.06.13" />
-<figcaption aria-hidden="true">截屏2023-12-27 21.06.13</figcaption>
-</figure></li>
+<li>无需选项，又有一个参试，表示要输出的内容，复杂内容可以用 &quot;&quot; 包围</li>
+<li>![截屏 2023-12-27 21.06.13](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-27 21.06.13.png)</li>
 </ul>
-<p>反引号的作用，我们可以通过将命令用反引号（通常也称之为飘号）`将其包围</p>
-<p>被`包围的内容，会被作为命令执行，而非普通字符。</p>
-<p><img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-27 21.11.32.png" alt="截屏2023-12-27 21.11.32" style="zoom:50%;" /></p>
-<h5 id="tail-跟踪文件更改">2.6.12 <code>tail</code> 跟踪文件更改</h5>
-<p>使用<code>tail</code>命令，可以查看文件尾部内容，跟踪文件的最新更改，</p>
-<p>语法：<code>tail [-f -num] Linux路径</code></p>
+<p>反引号的作用，我们可以通过将命令用反引号（通常也称之为飘号）` 将其包围</p>
+<p>被 ` 包围的内容，会被作为命令执行，而非普通字符。</p>
+<img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-27 21.11.32.png" alt="截屏2023-12-27 21.11.32" style="zoom:50%;" />
+<h5 id="2612-tail-跟踪文件更改"><a class="markdownIt-Anchor" href="#2612-tail-跟踪文件更改">#</a> 2.6.12  <code>tail</code>  跟踪文件更改</h5>
+<p>使用 <code>tail</code>  命令，可以查看文件尾部内容，跟踪文件的最新更改，</p>
+<p>语法： <code>tail [-f -num] Linux路径</code></p>
 <ul>
-<li>参数，Linux路径，表示被跟踪的文件路径</li>
-<li>选项，<code>-f</code>，表示持续跟踪</li>
-<li>选项，<code>-num</code>，表示查看尾部多少行，不填默认10行</li>
+<li>参数，Linux 路径，表示被跟踪的文件路径</li>
+<li>选项， <code>-f</code> ，表示持续跟踪</li>
+<li>选项， <code>-num</code> ，表示查看尾部多少行，不填默认 10 行</li>
 </ul>
-<h5 id="重定向符使用">2.6.13 重定向符使用</h5>
-<p>重定向符：<code>&gt;和&gt;&gt;</code></p>
+<h5 id="2613-重定向符使用"><a class="markdownIt-Anchor" href="#2613-重定向符使用">#</a> 2.6.13 重定向符使用</h5>
+<p>重定向符： <code>&gt;和&gt;&gt;</code></p>
 <ul>
-<li><code>&gt;</code>，将左侧命令的结果，覆盖写入到符号右侧指定的文件中</li>
-<li><code>&gt;&gt;</code>，将左侧命令的结果，追加写入到符号右侧指定的文件中</li>
+<li><code>&gt;</code> ，将左侧命令的结果，覆盖写入到符号右侧指定的文件中</li>
+<li><code>&gt;&gt;</code> ，将左侧命令的结果，追加写入到符号右侧指定的文件中</li>
 </ul>
-<p><img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-28 17.08.09.png" alt="截屏2023-12-28 17.08.09" style="zoom:80%;" /></p>
-<h4 id="vivim编辑器">2.7 <code>vi\vim</code>编辑器</h4>
-<p><code>vi\vim</code>是
-<code>visual interface</code>的简称，是Linux中最经典的文本编辑器，同图形化界面中的文本编辑器一样，<code>vi</code>是命令行下对文本文件进行编辑的绝佳选择。</p>
-<p><code>vim</code>是<code>vi</code>的加强版本，兼容<code>vi</code>的所有指令，不仅能编辑文本，而且还具有<code>shell</code>程序编辑的功能，可以不同颜色的字体来辨别语法的正确性，极大方便了程序的设计和编辑性。</p>
-<p><strong><code>vi\vim</code>编辑器的三种工作模式</strong></p>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-28%2017.35.03.png"
-alt="截屏2023-12-28 17.35.03" />
-<figcaption aria-hidden="true">截屏2023-12-28 17.35.03</figcaption>
-</figure>
-<p>命令：<code>vim 文件路径</code></p>
+<img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-28 17.08.09.png" alt="截屏2023-12-28 17.08.09" style="zoom:80%;" />
+<h4 id="27-vivim编辑器"><a class="markdownIt-Anchor" href="#27-vivim编辑器">#</a> 2.7  <code>vi\vim</code>  编辑器</h4>
+<p><code>vi\vim</code>  是  <code>visual interface</code>  的简称，是 Linux 中最经典的文本编辑器，同图形化界面中的文本编辑器一样， <code>vi</code>  是命令行下对文本文件进行编辑的绝佳选择。</p>
+<p><code>vim</code>  是 <code>vi</code>  的加强版本，兼容 <code>vi</code>  的所有指令，不仅能编辑文本，而且还具有 <code>shell</code>  程序编辑的功能，可以不同颜色的字体来辨别语法的正确性，极大方便了程序的设计和编辑性。</p>
+<p><strong> <code>vi\vim</code>  编辑器的三种工作模式</strong></p>
+<p>![截屏 2023-12-28 17.35.03](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-28 17.35.03.png)</p>
+<p>命令： <code>vim 文件路径</code></p>
 <ul>
 <li>如果文件路径表示的文件不存在，那么此命令会用于编辑新文件</li>
 <li>如果文件路径表示的文件存在，那么此命令用于编辑已有文件</li>
 </ul>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-28%2019.50.59.png"
-alt="截屏2023-12-28 19.50.59" />
-<figcaption aria-hidden="true">截屏2023-12-28 19.50.59</figcaption>
-</figure>
-<p>通过<code>vi\vim</code>命令编辑文件，会打开一个新的窗口，此时这个窗口就是，命令窗口，命令模式是<code>vim</code>编辑器的入口和出口</p>
+<p>![截屏 2023-12-28 19.50.59](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-28 19.50.59.png)</p>
+<p>通过 <code>vi\vim</code>  命令编辑文件，会打开一个新的窗口，此时这个窗口就是，命令窗口，命令模式是 <code>vim</code>  编辑器的入口和出口</p>
 <ul>
-<li>进入<code>vim</code>编辑器会进入命令模式</li>
+<li>进入 <code>vim</code>  编辑器会进入命令模式</li>
 <li>通过命令模式输入键盘指令，可以进入输入模式</li>
 <li>输入模式需要退回到命令模式，然后通过命令可以进入底线命令模式</li>
 </ul>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>模式</th>
 <th>命令</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>命令模式</td>
 <td>i</td>
 <td>在当前光标位置进入输入模式</td>
 </tr>
-<tr class="even">
+<tr>
 <td>命令模式</td>
 <td>a</td>
 <td>在当前光标位置 之后 进入输入模式</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>命令模式</td>
 <td>I</td>
 <td>在当前行的开头，进入输入模式</td>
 </tr>
-<tr class="even">
+<tr>
 <td>命令模式</td>
 <td>A</td>
 <td>在当前行的结尾，进入输入模式</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>命令模式</td>
 <td>o</td>
 <td>在当前光标下一行进入输入模式</td>
 </tr>
-<tr class="even">
+<tr>
 <td>命令模式</td>
 <td>O</td>
 <td>在当前光标上一行进入输入模式</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>输入模式</td>
 <td>esc</td>
-<td>任何情况下输入esc 都能回到命令模式</td>
+<td>任何情况下输入 esc 都能回到命令模式</td>
 </tr>
 </tbody>
 </table>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-28%2021.17.03.png"
-alt="截屏2023-12-28 21.17.03" />
-<figcaption aria-hidden="true">截屏2023-12-28 21.17.03</figcaption>
-</figure>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-28%2022.19.15.png"
-alt="截屏2023-12-28 22.19.15" />
-<figcaption aria-hidden="true">截屏2023-12-28 22.19.15</figcaption>
-</figure>
-<h3 id="linux用户和权限">3.Linux用户和权限</h3>
-<h4 id="linux的root用户">3.1.Linux的root用户</h4>
-<p><strong>root用户（超级管理员）</strong></p>
-<p>无论是Windows、MacOS、Linux均采用多用户的管理模式进行权限管理。</p>
+<p>![截屏 2023-12-28 21.17.03](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-28 21.17.03.png)</p>
+<p>![截屏 2023-12-28 22.19.15](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-28 22.19.15.png)</p>
+<h3 id="3linux用户和权限"><a class="markdownIt-Anchor" href="#3linux用户和权限">#</a> 3.Linux 用户和权限</h3>
+<h4 id="31linux的root用户"><a class="markdownIt-Anchor" href="#31linux的root用户">#</a> 3.1.Linux 的 root 用户</h4>
+<p><strong>root 用户（超级管理员）</strong></p>
+<p>无论是 Windows、MacOS、Linux 均采用多用户的管理模式进行权限管理。</p>
 <ul>
-<li>在Linux系统中，拥有最大权限的账户名为：<code>root</code>（超级管理员）</li>
+<li>在 Linux 系统中，拥有最大权限的账户名为： <code>root</code> （超级管理员）</li>
 </ul>
-<p>root用户拥有最大的系统操作权限，而普通用户在许多地方的权限是受限的。</p>
-<p><img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-28 22.53.06.png" alt="截屏2023-12-28 22.53.06" style="zoom:50%;" /></p>
-<p>切换root用户</p>
-<p>命令：<code>su - root</code> 本机 root 密码 与 开机密码一致。</p>
-<p>普通用户的权限，一般在其HOME目录内是不受限的，一旦出了
-HOME目录，大多数地方，普通用户仅有只读和执行权限，无修改权限。</p>
-<p><strong><code>su</code> 和 <code>exit</code> 命令</strong></p>
-<p>语法：<code>su [-] [用户名]</code></p>
+<p>root 用户拥有最大的系统操作权限，而普通用户在许多地方的权限是受限的。</p>
+<img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-28 22.53.06.png" alt="截屏2023-12-28 22.53.06" style="zoom:50%;" />
+<p>切换 root 用户</p>
+<p>命令： <code>su - root</code>  本机 root 密码 与 开机密码一致。</p>
+<p>普通用户的权限，一般在其 HOME 目录内是不受限的，一旦出了 HOME 目录，大多数地方，普通用户仅有只读和执行权限，无修改权限。</p>
+<p><strong> <code>su</code>  和  <code>exit</code>  命令</strong></p>
+<p>语法： <code>su [-] [用户名]</code></p>
 <ul>
-<li>-符号是可选的，表示是否在切换用户后加载环境变量（后续讲解），建议带上</li>
-<li>参数：用户名，表示要切换的用户，用户名也可以省略，省略表示切换到root</li>
-<li>切换用户后，可以通过exit命令退回上一个用户，也可以使用快捷键：ctrl+d</li>
-<li>使用普通用户，切换到其它用户需要输入密码，如切换到root用户</li>
-<li>使用root用户切换到其它用户，无需密码，可以直接切换</li>
+<li>- 符号是可选的，表示是否在切换用户后加载环境变量（后续讲解），建议带上</li>
+<li>参数：用户名，表示要切换的用户，用户名也可以省略，省略表示切换到 root</li>
+<li>切换用户后，可以通过 exit 命令退回上一个用户，也可以使用快捷键：ctrl+d</li>
+<li>使用普通用户，切换到其它用户需要输入密码，如切换到 root 用户</li>
+<li>使用 root 用户切换到其它用户，无需密码，可以直接切换</li>
 </ul>
-<p><strong><code>sudo</code>命令</strong></p>
-<p>在我们得知root密码的时候，可以通过<code>su</code>
-命令切换到root得到最大权限，但是不建议长期使用root用户，避免带来系统损坏。</p>
-<p>我们可以使用<code>sudo</code>命令，为普通的命令授权，临时以root身份执行。</p>
-<p>语法：<code>sudo 其他命令</code></p>
+<p><strong> <code>sudo</code>  命令</strong></p>
+<p>在我们得知 root 密码的时候，可以通过 <code>su</code>  命令切换到 root 得到最大权限，但是不建议长期使用 root 用户，避免带来系统损坏。</p>
+<p>我们可以使用 <code>sudo</code>  命令，为普通的命令授权，临时以 root 身份执行。</p>
+<p>语法： <code>sudo 其他命令</code></p>
 <ul>
-<li>在其他命令之前，带上 <code>sudo</code>
-，既可为这一条命令临时赋予root授权</li>
-<li>但是并不是所有用户，都有权利使用 <code>sudo</code>
-，我们需要为普通用户配置<code>sudo</code>认证</li>
+<li>在其他命令之前，带上  <code>sudo</code>  ，既可为这一条命令临时赋予 root 授权</li>
+<li>但是并不是所有用户，都有权利使用  <code>sudo</code>  ，我们需要为普通用户配置 <code>sudo</code>  认证</li>
 </ul>
-<p><strong>为普通用户配置sudo认证</strong></p>
-<ol type="1">
-<li>切换到root用户，执行<code>visudo</code>命令，会自动通过<code>vi</code>编辑器打开，<code>/etc/sudoers</code></li>
-<li>在文件的最后添加：<img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-28 23.16.24.png" alt="截屏2023-12-28 23.16.24" style="zoom:50%;" />其中最后的<code>NOPASSWD:ALL</code>
-表示使用<code>sudo</code>命令，无需输入密码</li>
-<li>最后通过 <code>wq</code>保存</li>
+<p><strong>为普通用户配置 sudo 认证</strong></p>
+<ol>
+<li>切换到 root 用户，执行 <code>visudo</code>  命令，会自动通过 <code>vi</code>  编辑器打开， <code>/etc/sudoers</code></li>
+<li>在文件的最后添加：<img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-28 23.16.24.png" alt="截屏2023-12-28 23.16.24" style="zoom:50%;" />其中最后的 <code>NOPASSWD:ALL</code>  表示使用 <code>sudo</code>  命令，无需输入密码</li>
+<li>最后通过  <code>wq</code>  保存</li>
 </ol>
-<h4 id="用户用户组">3.2.用户、用户组</h4>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-28%2023.29.43.png"
-alt="截屏2023-12-28 23.29.43" />
-<figcaption aria-hidden="true">截屏2023-12-28 23.29.43</figcaption>
-</figure>
-<p>Linux中关于权限的管控级别有2个级别，分别是：</p>
+<h4 id="32用户-用户组"><a class="markdownIt-Anchor" href="#32用户-用户组">#</a> 3.2. 用户、用户组</h4>
+<p>![截屏 2023-12-28 23.29.43](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-28 23.29.43.png)</p>
+<p>Linux 中关于权限的管控级别有 2 个级别，分别是：</p>
 <ul>
 <li>针对用户的权限控制</li>
 <li>针对用户组的权限控制</li>
 </ul>
-<p>比如，针对某文件，可以控制用户的权限，也可以控制用户组的权限。所以，我们需要学习在Linux中进行用户、用户组管理的基础命令，为后面学习权限控制打下基础。</p>
+<p>比如，针对某文件，可以控制用户的权限，也可以控制用户组的权限。所以，我们需要学习在 Linux 中进行用户、用户组管理的基础命令，为后面学习权限控制打下基础。</p>
 <p><strong>用户组管理</strong></p>
-<p>以下命令需root用户执行</p>
+<p>以下命令需 root 用户执行</p>
 <ul>
-<li>创建用户组 <code>groupadd 用户组名</code></li>
-<li>删除用户组<code>groupdel 用户组名</code></li>
+<li>创建用户组  <code>groupadd 用户组名</code></li>
+<li>删除用户组 <code>groupdel 用户组名</code></li>
 </ul>
 <p><strong>用户管理</strong></p>
-<p>以下命令需root用户执行</p>
+<p>以下命令需 root 用户执行</p>
 <ul>
-<li>创建用户 <code>useradd [-g -d] 用户名</code>
+<li>创建用户  <code>useradd [-g -d] 用户名</code>
 <ul>
-<li>﻿选项：<code>-g</code>指定用户的组，不指定<code>-g</code>，会创建同名组并自动加入，指定<code>-g</code>需要组己经存在，如己存在同名组，必须使用<code>-g</code></li>
-<li>﻿选项：<code>-d</code>指定用户<code>HOME路径</code>，不指定，<code>HOME</code>目录默认在：<code>/home/用户名</code></li>
-</ul></li>
-<li>删除用户 <code>userdel [-r] 用户名</code>
+<li>选项： <code>-g</code>  指定用户的组，不指定 <code>-g</code> ，会创建同名组并自动加入，指定 <code>-g</code>  需要组己经存在，如己存在同名组，必须使用 <code>-g</code></li>
+<li>选项： <code>-d</code>  指定用户 <code>HOME路径</code> ，不指定， <code>HOME</code>  目录默认在： <code>/home/用户名</code></li>
+</ul>
+</li>
+<li>删除用户  <code>userdel [-r] 用户名</code>
 <ul>
-<li>选项：<code>-r</code>，删除用户的<code>HOME</code>目录，不使用
-<code>-r</code>，删除用户时，<code>HOME</code>目录保留</li>
-</ul></li>
-<li>查看用户所属组 <code>id [用户名]</code>
+<li>选项： <code>-r</code> ，删除用户的 <code>HOME</code>  目录，不使用  <code>-r</code> ，删除用户时， <code>HOME</code>  目录保留</li>
+</ul>
+</li>
+<li>查看用户所属组  <code>id [用户名]</code>
 <ul>
 <li>参数：用户名，被查看的用户，如果不提供则查看自身</li>
-</ul></li>
-<li>修改用户所属组<code>usermod -aG 用户组 用户名</code>
-，将指定用户加入指定用户组</li>
 </ul>
-<p><strong><code>getent</code></strong></p>
-<p>使用<code>getent</code> 命令，可以查看当前系统中有哪些用户。</p>
-<p>语法 <code>getent passwd</code></p>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-29%2000.20.13.png"
-alt="截屏2023-12-29 00.20.13" />
-<figcaption aria-hidden="true">截屏2023-12-29 00.20.13</figcaption>
-</figure>
-<p><img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-29 00.21.25.png" alt="截屏2023-12-29 00.21.25" style="zoom:50%;" /></p>
-<h4 id="查看权限控制信息">3.3.查看权限控制信息</h4>
+</li>
+<li>修改用户所属组 <code>usermod -aG 用户组 用户名</code>  ，将指定用户加入指定用户组</li>
+</ul>
+<p><strong> <code>getent</code> </strong></p>
+<p>使用 <code>getent</code>  命令，可以查看当前系统中有哪些用户。</p>
+<p>语法  <code>getent passwd</code></p>
+<p>![截屏 2023-12-29 00.20.13](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-29 00.20.13.png)</p>
+<img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-29 00.21.25.png" alt="截屏2023-12-29 00.21.25" style="zoom:50%;" />
+<h4 id="33查看权限控制信息"><a class="markdownIt-Anchor" href="#33查看权限控制信息">#</a> 3.3. 查看权限控制信息</h4>
 <p><strong>认知权限信息</strong></p>
-<p>通过<code>ls -l</code>可以以列表形式查看内容，并显示权限细节</p>
-<p><img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-29 00.24.17.png" alt="截屏2023-12-29 00.24.17" style="zoom:50%;" /></p>
+<p>通过 <code>ls -l</code>  可以以列表形式查看内容，并显示权限细节</p>
+<img loading="lazy" data-src="/Users/huangqiuzhao/Library/Application Support/typora-user-images/截屏2023-12-29 00.24.17.png" alt="截屏2023-12-29 00.24.17" style="zoom:50%;" />
 <ul>
-<li>序号1，表示文件、文件夹的权限控制信息</li>
-<li>序号2，表示文件、文件夹所属用户</li>
-<li>序号3，表示文件、文件夹所属用户组</li>
+<li>序号 1，表示文件、文件夹的权限控制信息</li>
+<li>序号 2，表示文件、文件夹所属用户</li>
+<li>序号 3，表示文件、文件夹所属用户组</li>
 </ul>
-<p>解析序号1，权限细节，权限细节总共分为10个槽位</p>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-29%2000.31.57.png"
-alt="截屏2023-12-29 00.31.57" />
-<figcaption aria-hidden="true">截屏2023-12-29 00.31.57</figcaption>
-</figure>
+<p>解析序号 1，权限细节，权限细节总共分为 10 个槽位</p>
+<p>![截屏 2023-12-29 00.31.57](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-29 00.31.57.png)</p>
 <p><strong>rwx</strong></p>
 <ul>
-<li>r表示读权限</li>
-<li>w表示写权限</li>
-<li>x表示执行权限</li>
+<li>r 表示读权限</li>
+<li>w 表示写权限</li>
+<li>x 表示执行权限</li>
 </ul>
-<p>针对文件、文件夹的不同，rwx的含义有细微差别</p>
+<p>针对文件、文件夹的不同，rwx 的含义有细微差别</p>
 <ul>
 <li>r，针对文件可以查看文件内容
 <ul>
-<li>针对文件夹，可以查看文件夹内容，如<code>ls</code>命令</li>
-</ul></li>
+<li>针对文件夹，可以查看文件夹内容，如 <code>ls</code>  命令</li>
+</ul>
+</li>
 <li>w，针对文件表示可以修改此文件
 <ul>
 <li>针对文件夹，可以在文件夹内：创建、删除、改名等操作</li>
-</ul></li>
+</ul>
+</li>
 <li>x，针对文件表示可以将文件作为程序执行
 <ul>
-<li>针对文件夹，表示可以更改工作目录到此文件夹，即<code>cd</code>进入</li>
-</ul></li>
+<li>针对文件夹，表示可以更改工作目录到此文件夹，即 <code>cd</code>  进入</li>
 </ul>
-<h4 id="chmod命令">3.4.<code>chmod</code>命令</h4>
-<p>我们可以使用<code>chmod</code>命令，修改文件、文件夹的权限信息。</p>
-<p>注意⚠️，只有文件、文件夹的所属用户或root用户可以修改</p>
-<p>语法：<code>chmod [-R] 权限 文件或文件夹</code></p>
-<ul>
-<li>选项：<code>-R</code> ，对文件夹内的全部内容应用同样的操作</li>
+</li>
 </ul>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-29%2001.13.16.png"
-alt="截屏2023-12-29 01.13.16" />
-<figcaption aria-hidden="true">截屏2023-12-29 01.13.16</figcaption>
-</figure>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-29%2001.25.39.png"
-alt="截屏2023-12-29 01.25.39" />
-<figcaption aria-hidden="true">截屏2023-12-29 01.25.39</figcaption>
-</figure>
-<p>命令：<code>chmod [-R] *** 文件、文件夹</code></p>
-<h4 id="chown-命令">3.5.<code>chown</code> 命令</h4>
-<p>使用 <code>chown</code>
-命令，可以修改文件、文件夹的所属用户和用户组</p>
-<p>普通用户无法修改所属为其它用户或组，所以此命令只适用于root用户执行</p>
-<p>语法：<code>chown [-R] [用户][:][用户组] 文件或文件夹</code></p>
+<h4 id="34chmod命令"><a class="markdownIt-Anchor" href="#34chmod命令">#</a> 3.4. <code>chmod</code>  命令</h4>
+<p>我们可以使用 <code>chmod</code>  命令，修改文件、文件夹的权限信息。</p>
+<p>注意⚠️，只有文件、文件夹的所属用户或 root 用户可以修改</p>
+<p>语法： <code>chmod [-R] 权限 文件或文件夹</code></p>
 <ul>
-<li>选项，<code>-R</code>
-，同<code>chmod</code>，对文件夹内全部内容应用相同规则</li>
+<li>选项： <code>-R</code>  ，对文件夹内的全部内容应用同样的操作</li>
+</ul>
+<p>![截屏 2023-12-29 01.13.16](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-29 01.13.16.png)</p>
+<p>![截屏 2023-12-29 01.25.39](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-29 01.25.39.png)</p>
+<p>命令： <code>chmod [-R] *** 文件、文件夹</code></p>
+<h4 id="35chown-命令"><a class="markdownIt-Anchor" href="#35chown-命令">#</a> 3.5. <code>chown</code>  命令</h4>
+<p>使用  <code>chown</code>  命令，可以修改文件、文件夹的所属用户和用户组</p>
+<p>普通用户无法修改所属为其它用户或组，所以此命令只适用于 root 用户执行</p>
+<p>语法： <code>chown [-R] [用户][:][用户组] 文件或文件夹</code></p>
+<ul>
+<li>选项， <code>-R</code>  ，同 <code>chmod</code> ，对文件夹内全部内容应用相同规则</li>
 <li>选项，用户，修改所属用户</li>
 <li>选项，用户组，修改所属用户组</li>
-<li><code>:</code> 用于分隔用户和用户组</li>
+<li><code>:</code>  用于分隔用户和用户组</li>
 </ul>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-29%2001.35.41.png"
-alt="截屏2023-12-29 01.35.41" />
-<figcaption aria-hidden="true">截屏2023-12-29 01.35.41</figcaption>
-</figure>
-<h3 id="linux操作">4.Linux操作</h3>
-<h4 id="各类小技巧快捷键">4.1.各类小技巧快捷键</h4>
-<p><code>ctrl+c</code>强制停止</p>
+<p>![截屏 2023-12-29 01.35.41](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-29 01.35.41.png)</p>
+<h3 id="4linux操作"><a class="markdownIt-Anchor" href="#4linux操作">#</a> 4.Linux 操作</h3>
+<h4 id="41各类小技巧快捷键"><a class="markdownIt-Anchor" href="#41各类小技巧快捷键">#</a> 4.1. 各类小技巧快捷键</h4>
+<p><code>ctrl+c</code>  强制停止</p>
 <ul>
-<li>Linux某些程序的运行，如果想要强制停止它，可以使用快捷键<code>ctrl+c</code></li>
-<li>命令输入错误，也可以通过快捷键<code>ctrl+c</code>，退出当前输入，重新输入</li>
+<li>Linux 某些程序的运行，如果想要强制停止它，可以使用快捷键 <code>ctrl+c</code></li>
+<li>命令输入错误，也可以通过快捷键 <code>ctrl+c</code> ，退出当前输入，重新输入</li>
 </ul>
-<p><code>ctrl+d</code>退出或登出</p>
+<p><code>ctrl+d</code>  退出或登出</p>
 <ul>
-<li>可以通过快捷键：<code>ctrl+d</code>，退出账户的登录</li>
+<li>可以通过快捷键： <code>ctrl+d</code> ，退出账户的登录</li>
 <li>或者退出某些特定程序的专属页面</li>
 </ul>
-<p>⚠️：不能用于退出<code>vi/vim</code></p>
-<p><code>history</code>历史命令搜索</p>
+<p>⚠️：不能用于退出 <code>vi/vim</code></p>
+<p><code>history</code>  历史命令搜索</p>
 <ul>
-<li>可以通过<code>history</code>命令，查看历史输入过的命令</li>
-<li>可以通过：<code>!</code>命令前缀，自动执行上一次匹配前缀的命令</li>
-<li>可以通过快捷键：<code>ctrl+r</code>，输入内容去匹配历史命令
+<li>可以通过 <code>history</code>  命令，查看历史输入过的命令</li>
+<li>可以通过： <code>!</code>  命令前缀，自动执行上一次匹配前缀的命令</li>
+<li>可以通过快捷键： <code>ctrl+r</code> ，输入内容去匹配历史命令
 <ul>
 <li>如果搜索到的内容是你需要的，那么：
 <ul>
 <li>回车键可以直接执行</li>
 <li>键盘左右键，可以得到此命令（不执行）</li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p><strong>光标移动快捷键</strong></p>
 <ul>
-<li><code>ctrl+a</code>，跳到命令开头</li>
-<li><code>ctrl+e</code>，跳到命令结尾</li>
-<li><code>ctrl+键盘左键</code> ，向左跳一个单词</li>
-<li><code>ctrl+键盘右键</code>，向右跳一个单词</li>
+<li><code>ctrl+a</code> ，跳到命令开头</li>
+<li><code>ctrl+e</code> ，跳到命令结尾</li>
+<li><code>ctrl+键盘左键</code>  ，向左跳一个单词</li>
+<li><code>ctrl+键盘右键</code> ，向右跳一个单词</li>
 </ul>
-<h4 id="软件安装">4.2.软件安装</h4>
-<h5 id="yum为centos系统安装软件">4.2.1.
-<code>yum</code>为CentOS系统安装软件</h5>
+<h4 id="42软件安装"><a class="markdownIt-Anchor" href="#42软件安装">#</a> 4.2. 软件安装</h4>
+<h5 id="421-yum为centos系统安装软件"><a class="markdownIt-Anchor" href="#421-yum为centos系统安装软件">#</a> 4.2.1.  <code>yum</code>  为 CentOS 系统安装软件</h5>
 <p>操作系统安装软件有许多方式，一般分为：</p>
 <ul>
 <li>下载安装包自行安装</li>
 <li>系统内应用商店安装</li>
 </ul>
 <p><code>yum命令</code></p>
-<p><code>yum</code>:RPM包软件管理器，用于自动化安装配置Linux软件，并可以自动解决依赖问题。</p>
-<p>语法：<code>yum [-y] [install | remove | search] 软件名称</code></p>
+<p><code>yum</code> :RPM 包软件管理器，用于自动化安装配置 Linux 软件，并可以自动解决依赖问题。</p>
+<p>语法： <code>yum [-y] [install | remove | search] 软件名称</code></p>
 <ul>
-<li>选项：<code>-y</code>，自动确认，无需手动确认安装或卸载过程</li>
-<li><code>install</code>：安装</li>
-<li><code>remove</code>：卸载</li>
-<li><code>search</code>：搜素</li>
+<li>选项： <code>-y</code> ，自动确认，无需手动确认安装或卸载过程</li>
+<li><code>install</code> ：安装</li>
+<li><code>remove</code> ：卸载</li>
+<li><code>search</code> ：搜素</li>
 </ul>
-<p><code>yum</code>命令需要root权限，可以<code>su</code>切换到root，或使用<code>sudo</code>提权。<code>yum</code>命令需要联网。</p>
-<h5 id="apt为ubuntu安装软件">4.2.2.<code>apt</code>为Ubuntu安装软件</h5>
-<p>前面学习的各类Linux命令，都是通用的。但是软件安装，CentOs系统和Ubuntu是使用不同的包管理器。centos使用yum管理器，Ubuntu使用apt管理器通过前面学习的WSL环境，我们可以得到Ubuntu运行环境。</p>
-<p>语法：<code>apt [-y] [install | remove | search] 软件名称</code></p>
-<p>用法和<code>yum</code>一致，同样需要root杈限</p>
+<p><code>yum</code>  命令需要 root 权限，可以 <code>su</code>  切换到 root，或使用 <code>sudo</code>  提权。 <code>yum</code>  命令需要联网。</p>
+<h5 id="422apt为ubuntu安装软件"><a class="markdownIt-Anchor" href="#422apt为ubuntu安装软件">#</a> 4.2.2. <code>apt</code>  为 Ubuntu 安装软件</h5>
+<p>前面学习的各类 Linux 命令，都是通用的。但是软件安装，CentOs 系统和 Ubuntu 是使用不同的包管理器。centos 使用 yum 管理器，Ubuntu 使用 apt 管理器通过前面学习的 WSL 环境，我们可以得到 Ubuntu 运行环境。</p>
+<p>语法： <code>apt [-y] [install | remove | search] 软件名称</code></p>
+<p>用法和 <code>yum</code>  一致，同样需要 root 杈限</p>
 <ul>
-<li>﻿﻿<code>apt install wget</code>, 安装wget</li>
-<li>﻿﻿<code>apt remove wget</code>,移除wget</li>
-<li>﻿﻿<code>apt search wget</code>,搜索wget</li>
+<li><code>apt install wget</code> , 安装 wget</li>
+<li><code>apt remove wget</code> , 移除 wget</li>
+<li><code>apt search wget</code> , 搜索 wget</li>
 </ul>
-<h4
-id="systemctl控制软件启动关闭">4.3.<code>systemctl</code>控制软件启动关闭</h4>
-<p>Linux系统很多软件(内置或第三方）均支持使用systemct命令控制：启动、停止、开机自启。能够被systemctl管理的软件，一般也称之为：服务。</p>
-<p>语法：<code>systemctl start | stop | status | enable | disable 服务名</code></p>
+<h4 id="43systemctl控制软件启动关闭"><a class="markdownIt-Anchor" href="#43systemctl控制软件启动关闭">#</a> 4.3. <code>systemctl</code>  控制软件启动关闭</h4>
+<p>Linux 系统很多软件 (内置或第三方）均支持使用 systemct 命令控制：启动、停止、开机自启。能够被 systemctl 管理的软件，一般也称之为：服务。</p>
+<p>语法： <code>systemctl start | stop | status | enable | disable 服务名</code></p>
 <ul>
 <li>start 启动</li>
 <li>stop 关闭</li>
@@ -566,236 +475,148 @@ id="systemctl控制软件启动关闭">4.3.<code>systemctl</code>控制软件启
 <li>enable 开启开机自启</li>
 <li>disable 关闭开机自启</li>
 </ul>
-<p>除了内置的服务外，部分第三方软件安装后，如果它们内部有服务，也可以通过<code>systemctl</code>进行控制。</p>
-<h4 id="ln命令创建软链接">4.4.<code>ln</code>命令创建软链接</h4>
+<p>除了内置的服务外，部分第三方软件安装后，如果它们内部有服务，也可以通过 <code>systemctl</code>  进行控制。</p>
+<h4 id="44ln命令创建软链接"><a class="markdownIt-Anchor" href="#44ln命令创建软链接">#</a> 4.4. <code>ln</code>  命令创建软链接</h4>
 <p>在系统中创建软链接，可以将文件、文件夹链接到其它位置。</p>
-<p>类似Windows系统中的《快捷方式》</p>
-<p>语法：<code>In -s 参数1 参数2</code></p>
+<p>类似 Windows 系统中的《快捷方式》</p>
+<p>语法： <code>In -s 参数1 参数2</code></p>
 <ul>
-<li><code>﻿-s</code>选项，创建软连接</li>
-<li><code>﻿参数1</code>：被链接的文件或文件夹</li>
-<li><code>﻿参数2</code>：要链接去的目的地</li>
+<li><code>﻿-s</code>  选项，创建软连接</li>
+<li><code>﻿参数1</code> ：被链接的文件或文件夹</li>
+<li><code>﻿参数2</code> ：要链接去的目的地</li>
 </ul>
 <p>实例：</p>
 <ul>
-<li>﻿﻿<code>In -s /etc/yum.conf ~/yum.conf</code></li>
-<li>﻿﻿<code>﻿﻿In -s /etc/yum ~/yum</code></li>
+<li><code>In -s /etc/yum.conf ~/yum.conf</code></li>
+<li><code>﻿﻿In -s /etc/yum ~/yum</code></li>
 </ul>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-29%2015.10.21.png"
-alt="截屏2023-12-29 15.10.21" />
-<figcaption aria-hidden="true">截屏2023-12-29 15.10.21</figcaption>
-</figure>
-<h4 id="ip地址和主机名">4.5.IP地址和主机名</h4>
-<p><strong>IP地址</strong></p>
+<p>![截屏 2023-12-29 15.10.21](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-29 15.10.21.png)</p>
+<h4 id="45ip地址和主机名"><a class="markdownIt-Anchor" href="#45ip地址和主机名">#</a> 4.5.IP 地址和主机名</h4>
+<p><strong>IP 地址</strong></p>
 <p>每一台联网的电脑都会有一个地址，用于和其它计算机进行通讯</p>
-<p>IP地址主要有2个版本，V4版本和V6版本（V5很少用，课程暂不涉及）</p>
-<p>IPV4版本的地址格式是：a.b.c.d，其中abcd表示0~255的数字，如192.168.88.101就是一个标准的IP地址</p>
-<p>可以通过命令：<code>ifconfig</code>，
-查看本机的ip地址，如无法使用<code>ifconfig</code>命令，可以安装：<code>yum-y install net-tools</code></p>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-29%2015.23.44.png"
-alt="截屏2023-12-29 15.23.44" />
-<figcaption aria-hidden="true">截屏2023-12-29 15.23.44</figcaption>
-</figure>
-<p><strong>特殊IP地址</strong></p>
+<p>IP 地址主要有 2 个版本，V4 版本和 V6 版本（V5 很少用，课程暂不涉及）</p>
+<p>IPV4 版本的地址格式是：a.b.c.d，其中 abcd 表示 0~255 的数字，如 192.168.88.101 就是一个标准的 IP 地址</p>
+<p>可以通过命令： <code>ifconfig</code> ， 查看本机的 ip 地址，如无法使用 <code>ifconfig</code>  命令，可以安装： <code>yum-y install net-tools</code></p>
+<p>![截屏 2023-12-29 15.23.44](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-29 15.23.44.png)</p>
+<p><strong>特殊 IP 地址</strong></p>
 <ul>
-<li><code>127.0.0.1</code> ，这个IP地址用于指代本机</li>
-<li><code>0.0.0.0</code>，特殊IP地址
+<li><code>127.0.0.1</code>  ，这个 IP 地址用于指代本机</li>
+<li><code>0.0.0.0</code> ，特殊 IP 地址
 <ul>
 <li>可以用来指代本机</li>
 <li>可以在端口绑定中用来确定绑定关系</li>
-<li>在一些IP地址限制中，表示所有IP的意思，如放行规则设置为<code>0.0.0.0</code>，表示允许任意IP访问。</li>
-</ul></li>
+<li>在一些 IP 地址限制中，表示所有 IP 的意思，如放行规则设置为 <code>0.0.0.0</code> ，表示允许任意 IP 访问。</li>
+</ul>
+</li>
 </ul>
 <p><strong>域名解析</strong></p>
-<p>IP地址实在是难以记忆，有没有什么办法可以通过主机名或替代的字符地址去代替数宇化的IP地址呢？</p>
-<p>实际上，我们一直都是通过宇符化的地址去访问服务器，很少指定IP地址</p>
-<p>比如，我们在浏览器内打开：www.baidu.com，会打开百度的网址</p>
-<p>其中，www.baidu.com，是百度的网址，我们称之为：域名</p>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-29%2015.50.17.png"
-alt="截屏2023-12-29 15.50.17" />
-<figcaption aria-hidden="true">截屏2023-12-29 15.50.17</figcaption>
-</figure>
-<p><strong>固定IP</strong></p>
-<p>当前我们虛拟机的Linux操作系统，其1P地址是通过DHGP服务获取的。</p>
-<p>DHCP：动态获取(P地址，即每汉重启设备后都会获取一次，可能导致1卩地址频繁变更</p>
-<p>原因1：办公电脑IP地址变化无所谓，但是我们要远程连接到Linux系统，如果IP地址经常变化我们就要频繁修改适配很麻</p>
+<p>IP 地址实在是难以记忆，有没有什么办法可以通过主机名或替代的字符地址去代替数宇化的 IP 地址呢？</p>
+<p>实际上，我们一直都是通过宇符化的地址去访问服务器，很少指定 IP 地址</p>
+<p>比如，我们在浏览器内打开：<a target="_blank" rel="noopener" href="http://www.baidu.com">www.baidu.com</a>，会打开百度的网址</p>
+<p>其中，<a target="_blank" rel="noopener" href="http://www.baidu.com">www.baidu.com</a>，是百度的网址，我们称之为：域名</p>
+<p>![截屏 2023-12-29 15.50.17](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-29 15.50.17.png)</p>
+<p><strong>固定 IP</strong></p>
+<p>当前我们虛拟机的 Linux 操作系统，其 1P 地址是通过 DHGP 服务获取的。</p>
+<p>DHCP：动态获取 (P 地址，即每汉重启设备后都会获取一次，可能导致 1 卩地址频繁变更</p>
+<p>原因 1：办公电脑 IP 地址变化无所谓，但是我们要远程连接到 Linux 系统，如果 IP 地址经常变化我们就要频繁修改适配很麻</p>
 <p>烦</p>
-<p>原因2：在刚刚我们配置了虚拟机IP地址和主机名的映射，如果1P频繁更改，我们也需要频繁更新映射关系</p>
-<p>综上所述，我们需要1P地址固定下来，不要变化了。</p>
-<h4 id="网络请求和下载">4.6.网络请求和下载</h4>
-<p>可以通过<code>ping</code>命令，检查指定的网络服务器是否是可连通状态</p>
-<p>语法：<code>ping [-c num] ip或主机名</code></p>
+<p>原因 2：在刚刚我们配置了虚拟机 IP 地址和主机名的映射，如果 1P 频繁更改，我们也需要频繁更新映射关系</p>
+<p>综上所述，我们需要 1P 地址固定下来，不要变化了。</p>
+<h4 id="46网络请求和下载"><a class="markdownIt-Anchor" href="#46网络请求和下载">#</a> 4.6. 网络请求和下载</h4>
+<p>可以通过 <code>ping</code>  命令，检查指定的网络服务器是否是可连通状态</p>
+<p>语法： <code>ping [-c num] ip或主机名</code></p>
 <ul>
-<li>选项：<code>-c</code>，检查的次数，不使用<code>-c</code>选项，将无限次数持续检查</li>
-<li>参数：<code>-ip或主机名</code>
-，被检查的服务器的ip地址或主机名地址</li>
+<li>选项： <code>-c</code> ，检查的次数，不使用 <code>-c</code>  选项，将无限次数持续检查</li>
+<li>参数： <code>-ip或主机名</code>  ，被检查的服务器的 ip 地址或主机名地址</li>
 </ul>
-<p>wget是非交互式的文件下载器，可以在命令行内下载网络文件</p>
-<p>语法：<code>wget [-b] url</code></p>
+<p>wget 是非交互式的文件下载器，可以在命令行内下载网络文件</p>
+<p>语法： <code>wget [-b] url</code></p>
 <ul>
-<li>﻿选项：<code>-b</code>，可选，后台下载，会将日志写入到当前工作目录的wget-log文件</li>
-<li>﻿参数：<code>url</code>，下载链接</li>
+<li>选项： <code>-b</code> ，可选，后台下载，会将日志写入到当前工作目录的 wget-log 文件</li>
+<li>参数： <code>url</code> ，下载链接</li>
 </ul>
 <p>示例：</p>
 <ul>
-<li><p>下载apache-hadoop
-3.3.0版本：<code>wget http://archive.apache.org/ dist/hadoop/common/hadoop-3.3.0/hadoop-3.3.0.tar.gz</code></p>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-29%2016.50.51.png"
-alt="截屏2023-12-29 16.50.51" />
-<figcaption aria-hidden="true">截屏2023-12-29 16.50.51</figcaption>
-</figure></li>
-<li><p>在后台下载：<code>wget -b http://archive.apache.org/dist/hadoop/common/hadoop-3.3.0/hadoop-3.3.0.tar.gz</code></p></li>
-<li><p>通过<code>tail</code>命令可以监控后台下载进度：<code>tail -f wget-log</code></p></li>
+<li>
+<p>下载 apache-hadoop 3.3.0 版本： <code>wget http://archive.apache.org/ dist/hadoop/common/hadoop-3.3.0/hadoop-3.3.0.tar.gz</code></p>
+<p>![截屏 2023-12-29 16.50.51](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-29 16.50.51.png)</p>
+</li>
+<li>
+<p>在后台下载： <code>wget -b http://archive.apache.org/dist/hadoop/common/hadoop-3.3.0/hadoop-3.3.0.tar.gz</code></p>
+</li>
+<li>
+<p>通过 <code>tail</code>  命令可以监控后台下载进度： <code>tail -f wget-log</code></p>
+</li>
 </ul>
-<p><code>curl</code>命令</p>
-<p><code>curl</code>可以发送<code>http</code>网络请求，可用于：下载文件、获取信息等</p>
-<p>语法：<code>curl [-O] url</code></p>
+<p><code>curl</code>  命令</p>
+<p><code>curl</code>  可以发送 <code>http</code>  网络请求，可用于：下载文件、获取信息等</p>
+<p>语法： <code>curl [-O] url</code></p>
 <ul>
-<li>选项：<code>-O</code>，用于下载文件，当<code>url</code>是下载链接时，可以使用此选项保存文件</li>
-<li>参数：<code>url</code>，要发起请求的网络地址</li>
+<li>选项： <code>-O</code> ，用于下载文件，当 <code>url</code>  是下载链接时，可以使用此选项保存文件</li>
+<li>参数： <code>url</code> ，要发起请求的网络地址</li>
 </ul>
-<h4 id="网络传输">4.7.网络传输</h4>
+<h4 id="47网络传输"><a class="markdownIt-Anchor" href="#47网络传输">#</a> 4.7. 网络传输</h4>
 <p>端口</p>
 <p>端口，是设备与外界通讯交流的出入口。端口可以分为：物理端口和虛拟端口两类</p>
 <ul>
-<li>物理端口：叉可称之为接口，是可见的端口，如USB接口，尺J45网口，HDM端口等</li>
+<li>物理端口：叉可称之为接口，是可见的端口，如 USB 接口，尺 J45 网口，HDM 端口等</li>
 <li>虛拟端口：是指计算机内部的端口，是不可见的，是用来操作系统和外部进行交互使用的</li>
 </ul>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-29%2020.01.09.png"
-alt="截屏2023-12-29 20.01.09" />
-<figcaption aria-hidden="true">截屏2023-12-29 20.01.09</figcaption>
-</figure>
+<p>![截屏 2023-12-29 20.01.09](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-29 20.01.09.png)</p>
 <p>端口（虚拟）</p>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-29%2020.03.36.png"
-alt="截屏2023-12-29 20.03.36" />
-<figcaption aria-hidden="true">截屏2023-12-29 20.03.36</figcaption>
-</figure>
-<p>如上图所示，两台计算机可以通过IP地址来进行互相之间的访问，但是，两台计算机之间的服务之间如何进行互相访问？如果只通过IP地址，那么就不太精确，所以我们可以通过虚拟出来的端口来进行访问。</p>
-<p>Linux系统是一个超大号小区，可以支持65535个端口，这6万多个端口分为3类进行使用：</p>
+<p>![截屏 2023-12-29 20.03.36](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-29 20.03.36.png)</p>
+<p>如上图所示，两台计算机可以通过 IP 地址来进行互相之间的访问，但是，两台计算机之间的服务之间如何进行互相访问？如果只通过 IP 地址，那么就不太精确，所以我们可以通过虚拟出来的端口来进行访问。</p>
+<p>Linux 系统是一个超大号小区，可以支持 65535 个端口，这 6 万多个端口分为 3 类进行使用：</p>
 <ul>
-<li>公认端口：1～1023，通常用于一些系统内置或知名程序的预留使用，如SSH服务的22端口，HTTPS服务的443端口，非特殊需要，不要占用这个范围的端口</li>
+<li>公认端口：1～1023，通常用于一些系统内置或知名程序的预留使用，如 SSH 服务的 22 端口，HTTPS 服务的 443 端口，非特殊需要，不要占用这个范围的端口</li>
 <li>注册端口：1024～49151，通常可以随意使用，用于松散的绑定一些程序、服务</li>
 <li>动态端口：49152～65535，通常不会固定绑定程序，二十当程序对外进行网络链接时，用于临时使用</li>
 </ul>
 <p>查看端口占用</p>
-<p>可以通过Linux命令去查看端口的占用情况</p>
+<p>可以通过 Linux 命令去查看端口的占用情况</p>
 <ul>
-<li>使用<code>nmap</code>命令，安装<code>nmap:yum -y install nmap</code></li>
+<li>使用 <code>nmap</code>  命令，安装 <code>nmap:yum -y install nmap</code></li>
 </ul>
-<p>语法：<code>nmap 被查看的IP地址</code></p>
-<p>可以通过<code>netstat</code>命令，查看指定端口的占用情况</p>
-<p>语法：<code>netstat -anp|grep 端口号</code></p>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-29%2020.31.34.png"
-alt="截屏2023-12-29 20.31.34" />
-<figcaption aria-hidden="true">截屏2023-12-29 20.31.34</figcaption>
-</figure>
-<h4 id="进程管理">4.8.进程管理</h4>
+<p>语法： <code>nmap 被查看的IP地址</code></p>
+<p>可以通过 <code>netstat</code>  命令，查看指定端口的占用情况</p>
+<p>语法： <code>netstat -anp|grep 端口号</code></p>
+<p>![截屏 2023-12-29 20.31.34](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-29 20.31.34.png)</p>
+<h4 id="48进程管理"><a class="markdownIt-Anchor" href="#48进程管理">#</a> 4.8. 进程管理</h4>
 <p>程序运行在操作系统中，是被操作系统所管理的。</p>
 <p>为管理运行的程序，每一个程序在运行的时候，便被操作系统注册为系统中的一个：进程</p>
-<p>并会为每一个进程都分配一个独有的：进程1D（进程号）</p>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-29%2021.51.55.png"
-alt="截屏2023-12-29 21.51.55" />
-<figcaption aria-hidden="true">截屏2023-12-29 21.51.55</figcaption>
-</figure>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-29%2022.07.06.png"
-alt="截屏2023-12-29 22.07.06" />
-<figcaption aria-hidden="true">截屏2023-12-29 22.07.06</figcaption>
-</figure>
-<p>在Linux中，可以通过<code>kill</code>命令关闭进程。</p>
-<p>语法：<code>kill [-9] 进程ID</code></p>
-<p>选项：<code>-9</code>，表示强制关闭进程。不使用此选项会向进程发送信号要求其关闭，但是否关闭看进程自身的处理机制。</p>
-<h4 id="主机状态监控">4.9.主机状态监控</h4>
+<p>并会为每一个进程都分配一个独有的：进程 1D（进程号）</p>
+<p>![截屏 2023-12-29 21.51.55](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-29 21.51.55.png)</p>
+<p>![截屏 2023-12-29 22.07.06](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-29 22.07.06.png)</p>
+<p>在 Linux 中，可以通过 <code>kill</code>  命令关闭进程。</p>
+<p>语法： <code>kill [-9] 进程ID</code></p>
+<p>选项： <code>-9</code> ，表示强制关闭进程。不使用此选项会向进程发送信号要求其关闭，但是否关闭看进程自身的处理机制。</p>
+<h4 id="49主机状态监控"><a class="markdownIt-Anchor" href="#49主机状态监控">#</a> 4.9. 主机状态监控</h4>
 <p><strong>查看系统资源占用</strong></p>
-<p>可以通过<code>top</code>命令查看CPU、内存使用情况，类似Windows的任务管理器。默认每5秒刷新一次，语法：直接输入<code>top</code>即可。</p>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-29%2022.24.51.png"
-alt="截屏2023-12-29 22.24.51" />
-<figcaption aria-hidden="true">截屏2023-12-29 22.24.51</figcaption>
-</figure>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-29%2022.30.16.png"
-alt="截屏2023-12-29 22.30.16" />
-<figcaption aria-hidden="true">截屏2023-12-29 22.30.16</figcaption>
-</figure>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-29%2022.32.06.png"
-alt="截屏2023-12-29 22.32.06" />
-<figcaption aria-hidden="true">截屏2023-12-29 22.32.06</figcaption>
-</figure>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-29%2022.37.39.png"
-alt="截屏2023-12-29 22.37.39" />
-<figcaption aria-hidden="true">截屏2023-12-29 22.37.39</figcaption>
-</figure>
+<p>可以通过 <code>top</code>  命令查看 CPU、内存使用情况，类似 Windows 的任务管理器。默认每 5 秒刷新一次，语法：直接输入 <code>top</code>  即可。</p>
+<p>![截屏 2023-12-29 22.24.51](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-29 22.24.51.png)</p>
+<p>![截屏 2023-12-29 22.30.16](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-29 22.30.16.png)</p>
+<p>![截屏 2023-12-29 22.32.06](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-29 22.32.06.png)</p>
+<p>![截屏 2023-12-29 22.37.39](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-29 22.37.39.png)</p>
 <p>磁盘信息监控</p>
-<p>使用<code>df</code>命令，可以查看磁盘的使用情况</p>
-<p>语法：<code>df [-h]</code></p>
-<p>选项：<code>-h</code> ，以更加人性化的单位显示</p>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-29%2022.48.24.png"
-alt="截屏2023-12-29 22.48.24" />
-<figcaption aria-hidden="true">截屏2023-12-29 22.48.24</figcaption>
-</figure>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-29%2022.49.59.png"
-alt="截屏2023-12-29 22.49.59" />
-<figcaption aria-hidden="true">截屏2023-12-29 22.49.59</figcaption>
-</figure>
+<p>使用 <code>df</code>  命令，可以查看磁盘的使用情况</p>
+<p>语法： <code>df [-h]</code></p>
+<p>选项： <code>-h</code>  ，以更加人性化的单位显示</p>
+<p>![截屏 2023-12-29 22.48.24](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-29 22.48.24.png)</p>
+<p>![截屏 2023-12-29 22.49.59](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-29 22.49.59.png)</p>
 <p><strong>网络状态监控</strong></p>
-<p>可以使用<code>sar</code>命令查看网络的相关统计（<code>sar</code>命令非常复杂，这里仅简单用于统计网络）</p>
-<p>语法：<code>sar -n DEV nums1 num2</code></p>
-<p>选项：<code>-n</code>，查看网络，<code>DEV</code>表示查看网络接口，<code>num1</code>：刷新间隔（不填就查看一次结束）,<code>num2</code>：查看次数（不填无限次数）</p>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2023-12-29%2022.55.30.png"
-alt="截屏2023-12-29 22.55.30" />
-<figcaption aria-hidden="true">截屏2023-12-29 22.55.30</figcaption>
-</figure>
-<h4 id="环境变量">4.10.环境变量</h4>
+<p>可以使用 <code>sar</code>  命令查看网络的相关统计（ <code>sar</code>  命令非常复杂，这里仅简单用于统计网络）</p>
+<p>语法： <code>sar -n DEV nums1 num2</code></p>
+<p>选项： <code>-n</code> ，查看网络， <code>DEV</code>  表示查看网络接口， <code>num1</code> ：刷新间隔（不填就查看一次结束）, <code>num2</code> ：查看次数（不填无限次数）</p>
+<p>![截屏 2023-12-29 22.55.30](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2023-12-29 22.55.30.png)</p>
+<h4 id="410环境变量"><a class="markdownIt-Anchor" href="#410环境变量">#</a> 4.10. 环境变量</h4>
 <p><strong>环境变量的作用</strong></p>
-<p>在讲解which命令的时候，我们知道使用的一系列命令其实本质上就是一个个的可执行程序。比如，cd命令的本体就是：<code>/usr/bin/cd</code>
-这个程序文件。</p>
-<p>那么为什么，无论当前工作目录在哪里，都能够执行:<code>/usr/bin/cd</code>
-这个程序呢？这就是环境变量的作用。</p>
-<p>环境变量是操作系统(windows、Linux、Mac)在运行的时候，记录的一些关键性信息，用以辅助系统运行。在Linux系统中执行：env命令即可查看当前系统中记录的环境变量环境变量是一种Keyvalue型结构，即名称和值，如下图：</p>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2024-01-01%2014.03.30.png"
-alt="截屏2024-01-01 14.03.30" />
-<figcaption aria-hidden="true">截屏2024-01-01 14.03.30</figcaption>
-</figure>
-<p>无论当前工作目录是什么，都能执行<code>/usr/bin/cd</code>这个程序，这个就是借助环境变量中<code>PATH</code>这个项目的值来做到的。</p>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2024-01-01%2014.06.32.png"
-alt="截屏2024-01-01 14.06.32" />
-<figcaption aria-hidden="true">截屏2024-01-01 14.06.32</figcaption>
-</figure>
-<p><code>PATH</code>记录了系统中执行任何命令的搜索路径，如上图记录了（路径之间以<code>:</code>隔开）：</p>
+<p>在讲解 which 命令的时候，我们知道使用的一系列命令其实本质上就是一个个的可执行程序。比如，cd 命令的本体就是： <code>/usr/bin/cd</code>  这个程序文件。</p>
+<p>那么为什么，无论当前工作目录在哪里，都能够执行: <code>/usr/bin/cd</code>  这个程序呢？这就是环境变量的作用。</p>
+<p>环境变量是操作系统 (windows、Linux、Mac) 在运行的时候，记录的一些关键性信息，用以辅助系统运行。在 Linux 系统中执行：env 命令即可查看当前系统中记录的环境变量环境变量是一种 Keyvalue 型结构，即名称和值，如下图：</p>
+<p>![截屏 2024-01-01 14.03.30](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2024-01-01 14.03.30.png)</p>
+<p>无论当前工作目录是什么，都能执行 <code>/usr/bin/cd</code>  这个程序，这个就是借助环境变量中 <code>PATH</code>  这个项目的值来做到的。</p>
+<p>![截屏 2024-01-01 14.06.32](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2024-01-01 14.06.32.png)</p>
+<p><code>PATH</code>  记录了系统中执行任何命令的搜索路径，如上图记录了（路径之间以 <code>:</code>  隔开）：</p>
 <ul>
 <li><code>/usr/local/bin</code></li>
 <li><code>/usr/bin</code></li>
@@ -804,109 +625,92 @@ alt="截屏2024-01-01 14.06.32" />
 <li><code>/home/itheima/.local/bin</code></li>
 <li><code>/home/itheima/bin</code></li>
 </ul>
-<p>当执行任何命令，都会按照顺序，从上述路径中搜索要执行的程序的本体。比如要执行<code>cd</code>命令，就从第二个目录<code>/usr/bin</code>中搜索到了<code>cd</code>命令，并执行。</p>
-<p><strong><code>$</code>符号的作用</strong></p>
-<p>在Linux系统中，<code>$</code>符号被用于取"变量"的值。环境变量记录的信息，除了给操作系统自己使用外，如果我们想要取用，也可以使用。取得环境变量的值就可以通过语法：<code>$环境变量名</code>来取得。</p>
-<p>比如：<code>echo $PATH</code></p>
-<p>就可以取得<code>PATH</code>这个环境变量的值，并通过<code>echo</code>语句输出出来。</p>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2024-01-01%2014.18.49.png"
-alt="截屏2024-01-01 14.18.49" />
-<figcaption aria-hidden="true">截屏2024-01-01 14.18.49</figcaption>
-</figure>
-<p>又或者：<code>echo $&#123;PATH&#125;ABC</code></p>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2024-01-01%2014.19.22.png"
-alt="截屏2024-01-01 14.19.22" />
-<figcaption aria-hidden="true">截屏2024-01-01 14.19.22</figcaption>
-</figure>
-<p>当和其他内容混合在一起的时候，可以通过<code>&#123;&#125;</code>来标注取的变量是谁。
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2024-01-01%2014.26.56.png"
-alt="截屏2024-01-01 14.26.56" /></p>
-<p><strong>自定义环境变量PATH</strong></p>
-<p>环境变量PATH这个项目里面记录了系统执行命令的搜索路径。这些搜索路径我们也可以自行添加到PATH中去。</p>
+<p>当执行任何命令，都会按照顺序，从上述路径中搜索要执行的程序的本体。比如要执行 <code>cd</code>  命令，就从第二个目录 <code>/usr/bin</code>  中搜索到了 <code>cd</code>  命令，并执行。</p>
+<p><strong> <code>$</code>  符号的作用</strong></p>
+<p>在 Linux 系统中， <code>$</code>  符号被用于取 &quot;变量&quot; 的值。环境变量记录的信息，除了给操作系统自己使用外，如果我们想要取用，也可以使用。取得环境变量的值就可以通过语法： <code>$环境变量名</code> 来取得。</p>
+<p>比如： <code>echo $PATH</code></p>
+<p>就可以取得 <code>PATH</code>  这个环境变量的值，并通过 <code>echo</code>  语句输出出来。</p>
+<p>![截屏 2024-01-01 14.18.49](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2024-01-01 14.18.49.png)</p>
+<p>又或者： <code>echo $&#123;PATH&#125;ABC</code></p>
+<p>![截屏 2024-01-01 14.19.22](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2024-01-01 14.19.22.png)</p>
+<p>当和其他内容混合在一起的时候，可以通过 <code>&#123;&#125;</code>  来标注取的变量是谁。 ![截屏 2024-01-01 14.26.56](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2024-01-01 14.26.56.png)</p>
+<p><strong>自定义环境变量 PATH</strong></p>
+<p>环境变量 PATH 这个项目里面记录了系统执行命令的搜索路径。这些搜索路径我们也可以自行添加到 PATH 中去。</p>
 <p>测试：</p>
 <ul>
-<li>﻿在当前HOME目录内创建文件夹，myenv，在文件夹内创建文件mkhaha</li>
-<li>﻿通过vim编辑器，在mkhaha文件内填入：echo 哈哈哈哈哈</li>
+<li>在当前 HOME 目录内创建文件夹，myenv，在文件夹内创建文件 mkhaha</li>
+<li>通过 vim 编辑器，在 mkhaha 文件内填入：echo 哈哈哈哈哈</li>
 </ul>
-<p>完成上述操作后，随意切换工作目录，执行mkhaha命令尝试一下，会发现无法执行</p>
-<p>修改PATH的值</p>
-<p>临时修改PATH:export
-PATH=$PATH：/home/itheima/myenv，再次执行mkhaha，无论在哪里都能执行或格expotPATI=PATH:/om管里面退录的邊氁瑞的瘦缘路径文件中去</p>
-<h4 id="linux文件的压缩和解压">4.11.Linux文件的压缩和解压</h4>
+<p>完成上述操作后，随意切换工作目录，执行 mkhaha 命令尝试一下，会发现无法执行</p>
+<p>修改 PATH 的值</p>
+<p>临时修改 PATH:export PATH=$PATH：/home/itheima/myenv，再次执行 mkhaha，无论在哪里都能执行或格 expotPATI=PATH:/om 管里面退录的邊氁瑞的瘦缘路径文件中去</p>
+<h4 id="411linux文件的压缩和解压"><a class="markdownIt-Anchor" href="#411linux文件的压缩和解压">#</a> 4.11.Linux 文件的压缩和解压</h4>
 <p><strong>压缩格式</strong></p>
 <p>市面上有非常多的压缩格式</p>
 <ul>
-<li>zip格式：Linux、Windows、macOS，常用</li>
-<li>7zip：Windows系统常用</li>
-<li>rar：Windows系统常用</li>
-<li>tar：Linux、MacOS常用</li>
-<li>gzip：Linux、MacOS常用</li>
+<li>zip 格式：Linux、Windows、macOS，常用</li>
+<li>7zip：Windows 系统常用</li>
+<li>rar：Windows 系统常用</li>
+<li>tar：Linux、MacOS 常用</li>
+<li>gzip：Linux、MacOS 常用</li>
 </ul>
-<p><strong><code>tar</code>命令</strong></p>
-<p>Linux和Mac系统常用有2种压缩格式，后级名分别是：</p>
+<p><strong> <code>tar</code>  命令</strong></p>
+<p>Linux 和 Mac 系统常用有 2 种压缩格式，后级名分别是：</p>
 <ul>
-<li><code>tar</code>，称之为<code>tarball</code>，归档文件，即简单的将文件组装到一个<code>.tar</code>的文件内，并没有太多文件体积的减少，仅仅是简单的封装</li>
-<li><code>gz</code>,也常见为,<code>.tar.gz</code>,<code>gzip</code>格式压缩文件，即使用gzip压缩算法将文件压缩到一个文件内，可以极大的减少压缩后的体积。</li>
+<li><code>tar</code> ，称之为 <code>tarball</code> ，归档文件，即简单的将文件组装到一个 <code>.tar</code>  的文件内，并没有太多文件体积的减少，仅仅是简单的封装</li>
+<li><code>gz</code> , 也常见为， <code>.tar.gz</code> , <code> gzip</code>  格式压缩文件，即使用 gzip 压缩算法将文件压缩到一个文件内，可以极大的减少压缩后的体积。</li>
 </ul>
-<p>针对这两种格式，使用<code>tar</code>命令均可以进行压缩和解压缩的操作</p>
-<p>语法：<code>tar [-c -v -x -f -z -C〕参数1参数2 ... 参数N</code></p>
+<p>针对这两种格式，使用 <code>tar</code>  命令均可以进行压缩和解压缩的操作</p>
+<p>语法： <code>tar [-c -v -x -f -z -C〕参数1参数2 ... 参数N</code></p>
 <ul>
-<li><p>﻿<code>-c</code>，创建压缩文件，用于压缩模式</p></li>
-<li><p>﻿<code>﻿-v</code>,显示压缩、解压过程，用于查看进度</p></li>
-<li><p>﻿<code>-x</code>，解压模式</p></li>
-<li><p>﻿<code>-f</code>，要创建的文件，或要解压的文件，-f选项必须在所有选项中位置处于最后一个</p></li>
-<li><p>﻿<code>-z,gzip</code>模式，不使用-z就是普通的tarball格式</p></li>
-<li><p>﻿<code>-C</code> 选择解压的目的地，用于解压模式</p></li>
+<li>
+<p><code>-c</code> ，创建压缩文件，用于压缩模式</p>
+</li>
+<li>
+<p><code>﻿-v</code> , 显示压缩、解压过程，用于查看进度</p>
+</li>
+<li>
+<p><code>-x</code> ，解压模式</p>
+</li>
+<li>
+<p><code>-f</code> ，要创建的文件，或要解压的文件，-f 选项必须在所有选项中位置处于最后一个</p>
+</li>
+<li>
+<p><code>-z,gzip</code>  模式，不使用 - z 就是普通的 tarball 格式</p>
+</li>
+<li>
+<p><code>-C</code>  选择解压的目的地，用于解压模式</p>
+</li>
 </ul>
 <p><code>tar命令压缩</code></p>
-<p><code>tar</code>的常用组合为：</p>
+<p><code>tar</code>  的常用组合为：</p>
 <ul>
-<li><code>tar -cvf test.tar 1 1.txt 2.txt 3.txt</code>
-将<code>1.txt 2.txt 3.txt</code>压缩到<code>test.tar</code>文件内</li>
-<li><code>tar -zcvf test.tar.gz 1.txt 2.txt 3.txt</code>将<code>1.txt 2.txt 3.txt</code>压缩到<code>test.tar.gz</code>文件内，使用<code>gzip</code>模式。</li>
+<li><code>tar -cvf test.tar 1 1.txt 2.txt 3.txt</code>  将 <code>1.txt 2.txt 3.txt</code>  压缩到 <code>test.tar</code>  文件内</li>
+<li><code>tar -zcvf test.tar.gz 1.txt 2.txt 3.txt</code>  将 <code>1.txt 2.txt 3.txt</code>  压缩到 <code>test.tar.gz</code>  文件内，使用 <code>gzip</code>  模式。</li>
 </ul>
 <p>⚠️注意：</p>
 <ul>
-<li><code>-z</code>选项如果使用，一般处于选项的第一位</li>
-<li><code>-f</code>则必须在最后一个</li>
+<li><code>-z</code>  选项如果使用，一般处于选项的第一位</li>
+<li><code>-f</code>  则必须在最后一个</li>
 </ul>
-<p><strong><code>tar</code>解压</strong></p>
-<p>常用的<code>tar</code>解压组合</p>
+<p><strong> <code>tar</code>  解压</strong></p>
+<p>常用的 <code>tar</code>  解压组合</p>
 <ul>
-<li><code>tar -xvf test.tar</code> 解压<code>test.tar</code>
-，将文件解压至当前目录</li>
-<li><code>tar -xvf test.tar -C /home/itheima</code>
-解压<code>test.tar</code>，将文件解压至指定目录
-(<code>/home/itheima</code>)</li>
-<li><code>tar -zxvf test.tar.gz -C /home/itheima</code>
-以<code>Gzip</code> 模式解压
-<code>test.tar.gz</code>，将文件解压至指定目录内(<code>/home/itheima</code>)</li>
+<li><code>tar -xvf test.tar</code>  解压 <code>test.tar</code>  ，将文件解压至当前目录</li>
+<li><code>tar -xvf test.tar -C /home/itheima</code>  解压 <code>test.tar</code> ，将文件解压至指定目录 ( <code>/home/itheima</code> )</li>
+<li><code>tar -zxvf test.tar.gz -C /home/itheima</code>  以 <code>Gzip</code>  模式解压  <code>test.tar.gz</code> ，将文件解压至指定目录内 ( <code>/home/itheima</code> )</li>
 </ul>
-<p><strong><code>zip</code>命令压缩文件</strong></p>
-<p>可以使用<code>zip</code>命令，压缩文件为<code>zip</code>压缩包</p>
-<p>语法：<code>zip [-r] 参数1 参数2 ... 参数N</code></p>
-<p>•<code>-r</code>，被压缩的包含文件夹的时候，需要使用<code>-r</code>选项，和<code>rm</code>、<code>cp</code>等命令的<code>-r</code>效果一致</p>
+<p><strong> <code>zip</code>  命令压缩文件</strong></p>
+<p>可以使用 <code>zip</code>  命令，压缩文件为 <code>zip</code>  压缩包</p>
+<p>语法： <code>zip [-r] 参数1 参数2 ... 参数N</code></p>
+<p>• <code>-r</code> ，被压缩的包含文件夹的时候，需要使用 <code>-r</code>  选项，和 <code>rm</code> 、 <code>cp</code>  等命令的 <code>-r</code>  效果一致</p>
 <p>示例：</p>
-<p>• <code>zip test.zip a.txt b.txt c.txt</code></p>
-<p>将<code>a.txt b.txt c.txt</code>压缩到<code>test.zip</code>文件内</p>
-<p>•<code>zip -r test.zip test itheima a.txt</code></p>
-<p>将<code>test、itheima</code>两个文件夹和<code>a.tx</code>t文件，压缩到<code>test.zip</code>文件内</p>
-<figure>
-<img
-src="/Users/huangqiuzhao/Library/Application%20Support/typora-user-images/截屏2024-01-01%2019.57.45.png"
-alt="截屏2024-01-01 19.57.45" />
-<figcaption aria-hidden="true">截屏2024-01-01 19.57.45</figcaption>
-</figure>
-</div><footer><div class="meta"><span class="item"><span class="icon"><i class="ic i-calendar-check"></i></span><span class="text">更新于</span><time title="修改时间：2024-05-05 12:47:53" itemprop="dateModified" datetime="2024-05-05T12:47:53+08:00">2024-05-05</time></span></div><div class="reward"><button><i class="ic i-heartbeat"></i>赞赏</button><p>请我喝[茶]~(￣▽￣)~*</p><div id="qr"><div><img loading="lazy" data-src="/assets/wechatpay.png" alt="hqz 微信支付"/><p>微信支付</p></div><div><img loading="lazy" data-src="/assets/alipay.png" alt="hqz 支付宝"/><p>支付宝</p></div></div></div><div id="copyright"><ul><li class="author"><strong>本文作者：</strong>hqz<i class="ic i-at"><em>@</em></i>刀刀博客</li><li class="link"><strong>本文链接：</strong><a href="https://chnhqz.github.io/2024/05/05/linux/linux-md/" title="linux.md">https://chnhqz.github.io/2024/05/05/linux/linux-md/</a></li><li class="license"><strong>版权声明：</strong>本站所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div></footer></article></div><div class="post-nav"><div class="item left"><a href="/2023/06/08/papper/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-1/" rel="prev" itemprop="url" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicis3attqj20zk0m8k7l.jpg" title="论文阅读"><span class="type">上一篇</span><h3>论文阅读</h3></a></div><div class="item right"><a href="/2024/05/05/mysql/" rel="next" itemprop="url" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicit4jrvuj20zk0m8785.jpg" title="mysql"><span class="type">下一篇</span><h3>mysql</h3></a></div></div><div class="wrap" id="comments"></div></div><div id="sidebar"><div class="inner"><div class="panels"><div class="inner"><div class="contents panel pjax" data-title="文章目录"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">Linux学习笔记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linux%E5%91%BD%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">2.Linux命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#linux%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">2.1.</span> <span class="toc-text">2.1Linux系统的目录结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#linux%E5%91%BD%E4%BB%A4%E5%85%A5%E9%97%A8"><span class="toc-number">2.2.</span> <span class="toc-text">2.2Linux命令入门</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#linux%E5%91%BD%E4%BB%A4%E5%9F%BA%E7%A1%80"><span class="toc-number">2.2.1.</span> <span class="toc-text">2.2.1Linux命令基础</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ls%E5%91%BD%E4%BB%A4%E5%85%A5%E9%97%A8"><span class="toc-number">2.2.2.</span> <span class="toc-text">2.2.2ls命令入门</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ls%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8F%82%E6%95%B0%E5%92%8C%E9%80%89%E9%A1%B9"><span class="toc-number">2.2.3.</span> <span class="toc-text">2.2.3ls命令的参数和选项</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E5%88%87%E6%8D%A2%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4cdpwd"><span class="toc-number">2.3.</span> <span class="toc-text">2.3目录切换相关命令（cd&#x2F;pwd）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#cd-%E5%88%87%E6%8D%A2%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95"><span class="toc-number">2.3.1.</span> <span class="toc-text">2.3.1cd 切换工作目录</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#pwd-%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95"><span class="toc-number">2.3.2.</span> <span class="toc-text">2.3.2pwd 查看当前工作目录</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%89%B9%E6%AE%8A%E8%B7%AF%E5%BE%84%E7%AC%A6"><span class="toc-number">2.4.</span> <span class="toc-text">2.4相对路径、绝对路径和特殊路径符</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="toc-number">2.4.1.</span> <span class="toc-text">2.4.1相对路径和绝对路径</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E8%B7%AF%E5%BE%84%E7%AC%A6"><span class="toc-number">2.4.2.</span> <span class="toc-text">2.4.2特殊路径符</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mkdir-%E5%91%BD%E4%BB%A4"><span class="toc-number">2.5.</span> <span class="toc-text">2.5mkdir 命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4"><span class="toc-number">2.6.</span> <span class="toc-text">2.6文件操作命令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#touch-%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6"><span class="toc-number">2.6.1.</span> <span class="toc-text">2.6.1touch 创建文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#cat-%E5%91%BD%E4%BB%A4%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">2.6.2.</span> <span class="toc-text">2.6.2cat
-命令查看文件内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#more-%E5%91%BD%E4%BB%A4%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">2.6.3.</span> <span class="toc-text">2.6.3more
-命令查看文件内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#cp-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">2.6.4.</span> <span class="toc-text">2.6.4 cp 复制文件、文件夹</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#mv-%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">2.6.5.</span> <span class="toc-text">2.6.5mv 移动文件、文件夹</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#rm-%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">2.6.6.</span> <span class="toc-text">2.6.6rm 删除文件、文件夹</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#which-%E6%9F%A5%E6%89%BE%E5%91%BD%E4%BB%A4%E7%9A%84%E7%A8%8B%E5%BA%8F%E6%96%87%E4%BB%B6"><span class="toc-number">2.6.7.</span> <span class="toc-text">2.6.7which
-查找命令的程序文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#find-%E6%9F%A5%E6%89%BE%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6"><span class="toc-number">2.6.8.</span> <span class="toc-text">2.6.8find 查找指定文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#grep-%E8%BF%87%E6%BB%A4%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">2.6.9.</span> <span class="toc-text">2.6.8grep 过滤文件内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#wc-%E7%BB%9F%E8%AE%A1%E5%86%85%E5%AE%B9%E6%95%B0%E9%87%8F"><span class="toc-number">2.6.10.</span> <span class="toc-text">2.6.9wc 统计内容数量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AE%A1%E9%81%93%E7%AC%A6"><span class="toc-number">2.6.11.</span> <span class="toc-text">2.6.10 管道符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#echo-%E8%BE%93%E5%87%BA%E5%86%85%E5%AE%B9"><span class="toc-number">2.6.12.</span> <span class="toc-text">2.6.11 echo 输出内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#tail-%E8%B7%9F%E8%B8%AA%E6%96%87%E4%BB%B6%E6%9B%B4%E6%94%B9"><span class="toc-number">2.6.13.</span> <span class="toc-text">2.6.12 tail 跟踪文件更改</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%87%8D%E5%AE%9A%E5%90%91%E7%AC%A6%E4%BD%BF%E7%94%A8"><span class="toc-number">2.6.14.</span> <span class="toc-text">2.6.13 重定向符使用</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vivim%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">2.7.</span> <span class="toc-text">2.7 vi\vim编辑器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linux%E7%94%A8%E6%88%B7%E5%92%8C%E6%9D%83%E9%99%90"><span class="toc-number">3.</span> <span class="toc-text">3.Linux用户和权限</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#linux%E7%9A%84root%E7%94%A8%E6%88%B7"><span class="toc-number">3.1.</span> <span class="toc-text">3.1.Linux的root用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-number">3.2.</span> <span class="toc-text">3.2.用户、用户组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E4%BF%A1%E6%81%AF"><span class="toc-number">3.3.</span> <span class="toc-text">3.3.查看权限控制信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#chmod%E5%91%BD%E4%BB%A4"><span class="toc-number">3.4.</span> <span class="toc-text">3.4.chmod命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#chown-%E5%91%BD%E4%BB%A4"><span class="toc-number">3.5.</span> <span class="toc-text">3.5.chown 命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linux%E6%93%8D%E4%BD%9C"><span class="toc-number">4.</span> <span class="toc-text">4.Linux操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%84%E7%B1%BB%E5%B0%8F%E6%8A%80%E5%B7%A7%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">4.1.</span> <span class="toc-text">4.1.各类小技巧快捷键</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">4.2.</span> <span class="toc-text">4.2.软件安装</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#yum%E4%B8%BAcentos%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="toc-number">4.2.1.</span> <span class="toc-text">4.2.1.
-yum为CentOS系统安装软件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#apt%E4%B8%BAubuntu%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="toc-number">4.2.2.</span> <span class="toc-text">4.2.2.apt为Ubuntu安装软件</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#systemctl%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E5%90%AF%E5%8A%A8%E5%85%B3%E9%97%AD"><span class="toc-number">4.3.</span> <span class="toc-text">4.3.systemctl控制软件启动关闭</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ln%E5%91%BD%E4%BB%A4%E5%88%9B%E5%BB%BA%E8%BD%AF%E9%93%BE%E6%8E%A5"><span class="toc-number">4.4.</span> <span class="toc-text">4.4.ln命令创建软链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ip%E5%9C%B0%E5%9D%80%E5%92%8C%E4%B8%BB%E6%9C%BA%E5%90%8D"><span class="toc-number">4.5.</span> <span class="toc-text">4.5.IP地址和主机名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E5%92%8C%E4%B8%8B%E8%BD%BD"><span class="toc-number">4.6.</span> <span class="toc-text">4.6.网络请求和下载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93"><span class="toc-number">4.7.</span> <span class="toc-text">4.7.网络传输</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="toc-number">4.8.</span> <span class="toc-text">4.8.进程管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E6%9C%BA%E7%8A%B6%E6%80%81%E7%9B%91%E6%8E%A7"><span class="toc-number">4.9.</span> <span class="toc-text">4.9.主机状态监控</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">4.10.</span> <span class="toc-text">4.10.环境变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#linux%E6%96%87%E4%BB%B6%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B"><span class="toc-number">4.11.</span> <span class="toc-text">4.11.Linux文件的压缩和解压</span></a></li></ol></li></ol></div><div class="related panel pjax" data-title="系列文章"></div><div class="overview panel" data-title="站点概览"><div class="author" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"><img class="image" loading="lazy" decoding="async" itemprop="image" alt="hqz" src="/assets/avatar.jpg"/><p class="name" itemprop="name">hqz</p><div class="description" itemprop="description">欢迎来到刀刀的笔记空间(^_^)</div></div><nav class="state"><div class="item posts"><a href="/archives/"><span class="count">12</span><span class="name">文章</span></a></div></nav><div class="social"><a target="_blank" rel="noopener" href="https://github.com/name" class="item github" title="https:&#x2F;&#x2F;github.com&#x2F;name"><i class="ic i-github"></i></a></div><div class="menu"><li class="item"><a href="/" rel="section"><i class="ic i-home"></i>首页</a></li></div></div></div></div><ul id="quick"><li class="prev pjax"><a href="/2024/05/05/mysql/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a></li><li class="up"><i class="ic i-arrow-up"></i></li><li class="down"><i class="ic i-arrow-down"></i></li><li class="next pjax"><a href="/2023/06/08/papper/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-1/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a></li><li class="percent"></li></ul></div></div><div class="dimmer"></div></div></main><footer id="footer"><div class="inner"><div class="widgets"><div class="rpost pjax"><h2>随机文章</h2><ul><li class="item"><div class="breadcrumb"></div><span><a href="/2024/05/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/2024/05/05/mysql/">mysql</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/2024/05/05/%E9%9F%B3%E8%A7%86%E9%A2%91/">音视频</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/2023/06/07/test/hello-world/">Hello World</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/2024/05/16/%E8%8B%B1%E8%AF%AD%E5%85%AD%E7%BA%A7%E4%BD%9C%E6%96%87/">英语六级作文</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/2024/05/06/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/2024/05/05/linux/linux-md/">linux.md</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/2023/06/07/test/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/2024/05/30/c/">c++</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/2024/05/06/%E5%8A%9B%E6%89%A3/">力扣</a></span></li></ul></div><div class="rpost pjax"><h2>最新评论</h2></div></div><div class="status"><div class="copyright">&copy; 2022 -<span itemprop="copyrightYear">2025</span><span class="with-love"><i class="ic i-sakura rotate"></i></span><span class="author" itemprop="copyrightHolder">hqz @ testName</span></div><div class="count"><span class="post-meta-item-icon"><i class="ic i-chart-area"></i></span><span title="站点总字数">365k 字</span><span class="post-meta-divider"> | </span><span class="post-meta-item-icon"><i class="ic i-coffee"></i></span><span title="站点阅读时长">5:32</span></div><div class="powered-by">基于 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & Theme.<a target="_blank" rel="noopener" href="https://github.com/theme-shoka-x/hexo-theme-shokaX/">ShokaX</a></div></div></div></footer></div><script data-config type="text/javascript">var LOCAL = {
+<p>•  <code>zip test.zip a.txt b.txt c.txt</code></p>
+<p>将 <code>a.txt b.txt c.txt </code> 压缩到 <code>test.zip</code>  文件内</p>
+<p>• <code>zip -r test.zip test itheima a.txt</code></p>
+<p>将 <code>test、itheima</code>  两个文件夹和 <code>a.tx</code> t 文件，压缩到 <code>test.zip</code>  文件内</p>
+<p>![截屏 2024-01-01 19.57.45](/Users/huangqiuzhao/Library/Application Support/typora-user-images/ 截屏 2024-01-01 19.57.45.png)</p>
+</div><footer><div class="meta"><span class="item"><span class="icon"><i class="ic i-calendar-check"></i></span><span class="text">更新于</span><time title="修改时间：2024-05-05 12:47:53" itemprop="dateModified" datetime="2024-05-05T12:47:53+08:00">2024-05-05</time></span></div><div class="reward"><button><i class="ic i-heartbeat"></i>赞赏</button><p>请我喝[茶]~(￣▽￣)~*</p><div id="qr"><div><img loading="lazy" data-src="/assets/wechatpay.png" alt="hqz 微信支付"/><p>微信支付</p></div><div><img loading="lazy" data-src="/assets/alipay.png" alt="hqz 支付宝"/><p>支付宝</p></div></div></div><div id="copyright"><ul><li class="author"><strong>本文作者：</strong>hqz<i class="ic i-at"><em>@</em></i>刀刀博客</li><li class="link"><strong>本文链接：</strong><a href="https://chnhqz.github.io/2024/05/05/linux/linux-md/" title="linux.md">https://chnhqz.github.io/2024/05/05/linux/linux-md/</a></li><li class="license"><strong>版权声明：</strong>本站所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div></footer></article></div><div class="post-nav"><div class="item left"><a href="/2023/06/08/papper/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-1/" rel="prev" itemprop="url" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicitcxhpij20zk0m8hdt.jpg" title="论文阅读"><span class="type">上一篇</span><h3>论文阅读</h3></a></div><div class="item right"><a href="/2024/05/05/mysql/" rel="next" itemprop="url" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicis3attqj20zk0m8k7l.jpg" title="mysql"><span class="type">下一篇</span><h3>mysql</h3></a></div></div><div class="wrap" id="comments"></div></div><div id="sidebar"><div class="inner"><div class="panels"><div class="inner"><div class="contents panel pjax" data-title="文章目录"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text"> Linux 学习笔记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2linux%E5%91%BD%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text"> 2.Linux 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#21linux%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">2.1.</span> <span class="toc-text"> 2.1Linux 系统的目录结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#22linux%E5%91%BD%E4%BB%A4%E5%85%A5%E9%97%A8"><span class="toc-number">2.2.</span> <span class="toc-text"> 2.2Linux 命令入门</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#221linux%E5%91%BD%E4%BB%A4%E5%9F%BA%E7%A1%80"><span class="toc-number">2.2.1.</span> <span class="toc-text"> 2.2.1Linux 命令基础</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#222ls%E5%91%BD%E4%BB%A4%E5%85%A5%E9%97%A8"><span class="toc-number">2.2.2.</span> <span class="toc-text"> 2.2.2ls 命令入门</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#223ls%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8F%82%E6%95%B0%E5%92%8C%E9%80%89%E9%A1%B9"><span class="toc-number">2.2.3.</span> <span class="toc-text"> 2.2.3ls 命令的参数和选项</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#23%E7%9B%AE%E5%BD%95%E5%88%87%E6%8D%A2%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4cdpwd"><span class="toc-number">2.3.</span> <span class="toc-text"> 2.3 目录切换相关命令（cd&#x2F;pwd）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#231cd-%E5%88%87%E6%8D%A2%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95"><span class="toc-number">2.3.1.</span> <span class="toc-text"> 2.3.1cd 切换工作目录</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#232pwd-%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95"><span class="toc-number">2.3.2.</span> <span class="toc-text"> 2.3.2pwd 查看当前工作目录</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#24%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84-%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%89%B9%E6%AE%8A%E8%B7%AF%E5%BE%84%E7%AC%A6"><span class="toc-number">2.4.</span> <span class="toc-text"> 2.4 相对路径、绝对路径和特殊路径符</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#241%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="toc-number">2.4.1.</span> <span class="toc-text"> 2.4.1 相对路径和绝对路径</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#242%E7%89%B9%E6%AE%8A%E8%B7%AF%E5%BE%84%E7%AC%A6"><span class="toc-number">2.4.2.</span> <span class="toc-text"> 2.4.2 特殊路径符</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25mkdir-%E5%91%BD%E4%BB%A4"><span class="toc-number">2.5.</span> <span class="toc-text"> 2.5 mkdir  命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#26%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4"><span class="toc-number">2.6.</span> <span class="toc-text"> 2.6 文件操作命令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#261touch-%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6"><span class="toc-number">2.6.1.</span> <span class="toc-text"> 2.6.1 touch  创建文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#262cat-%E5%91%BD%E4%BB%A4%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">2.6.2.</span> <span class="toc-text"> 2.6.2 cat  命令查看文件内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#263more-%E5%91%BD%E4%BB%A4%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">2.6.3.</span> <span class="toc-text"> 2.6.3 more  命令查看文件内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#264-cp-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6-%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">2.6.4.</span> <span class="toc-text"> 2.6.4  cp  复制文件、文件夹</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#265mv-%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6-%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">2.6.5.</span> <span class="toc-text"> 2.6.5 mv   移动文件、文件夹</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#266rm-%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6-%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">2.6.6.</span> <span class="toc-text"> 2.6.6 rm  删除文件、文件夹</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#267which-%E6%9F%A5%E6%89%BE%E5%91%BD%E4%BB%A4%E7%9A%84%E7%A8%8B%E5%BA%8F%E6%96%87%E4%BB%B6"><span class="toc-number">2.6.7.</span> <span class="toc-text"> 2.6.7 which  查找命令的程序文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#268find-%E6%9F%A5%E6%89%BE%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6"><span class="toc-number">2.6.8.</span> <span class="toc-text"> 2.6.8 find  查找指定文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#268grep-%E8%BF%87%E6%BB%A4%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">2.6.9.</span> <span class="toc-text"> 2.6.8 grep  过滤文件内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#269wc-%E7%BB%9F%E8%AE%A1%E5%86%85%E5%AE%B9%E6%95%B0%E9%87%8F"><span class="toc-number">2.6.10.</span> <span class="toc-text"> 2.6.9 wc  统计内容数量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2610-%E7%AE%A1%E9%81%93%E7%AC%A6"><span class="toc-number">2.6.11.</span> <span class="toc-text"> 2.6.10  管道符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2611-echo-%E8%BE%93%E5%87%BA%E5%86%85%E5%AE%B9"><span class="toc-number">2.6.12.</span> <span class="toc-text"> 2.6.11  echo  输出内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2612-tail-%E8%B7%9F%E8%B8%AA%E6%96%87%E4%BB%B6%E6%9B%B4%E6%94%B9"><span class="toc-number">2.6.13.</span> <span class="toc-text"> 2.6.12  tail  跟踪文件更改</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2613-%E9%87%8D%E5%AE%9A%E5%90%91%E7%AC%A6%E4%BD%BF%E7%94%A8"><span class="toc-number">2.6.14.</span> <span class="toc-text"> 2.6.13 重定向符使用</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#27-vivim%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">2.7.</span> <span class="toc-text"> 2.7  vi\vim  编辑器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3linux%E7%94%A8%E6%88%B7%E5%92%8C%E6%9D%83%E9%99%90"><span class="toc-number">3.</span> <span class="toc-text"> 3.Linux 用户和权限</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#31linux%E7%9A%84root%E7%94%A8%E6%88%B7"><span class="toc-number">3.1.</span> <span class="toc-text"> 3.1.Linux 的 root 用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#32%E7%94%A8%E6%88%B7-%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-number">3.2.</span> <span class="toc-text"> 3.2. 用户、用户组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#33%E6%9F%A5%E7%9C%8B%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E4%BF%A1%E6%81%AF"><span class="toc-number">3.3.</span> <span class="toc-text"> 3.3. 查看权限控制信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#34chmod%E5%91%BD%E4%BB%A4"><span class="toc-number">3.4.</span> <span class="toc-text"> 3.4. chmod  命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#35chown-%E5%91%BD%E4%BB%A4"><span class="toc-number">3.5.</span> <span class="toc-text"> 3.5. chown  命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4linux%E6%93%8D%E4%BD%9C"><span class="toc-number">4.</span> <span class="toc-text"> 4.Linux 操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#41%E5%90%84%E7%B1%BB%E5%B0%8F%E6%8A%80%E5%B7%A7%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">4.1.</span> <span class="toc-text"> 4.1. 各类小技巧快捷键</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#42%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">4.2.</span> <span class="toc-text"> 4.2. 软件安装</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#421-yum%E4%B8%BAcentos%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="toc-number">4.2.1.</span> <span class="toc-text"> 4.2.1.  yum  为 CentOS 系统安装软件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#422apt%E4%B8%BAubuntu%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="toc-number">4.2.2.</span> <span class="toc-text"> 4.2.2. apt  为 Ubuntu 安装软件</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#43systemctl%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E5%90%AF%E5%8A%A8%E5%85%B3%E9%97%AD"><span class="toc-number">4.3.</span> <span class="toc-text"> 4.3. systemctl  控制软件启动关闭</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#44ln%E5%91%BD%E4%BB%A4%E5%88%9B%E5%BB%BA%E8%BD%AF%E9%93%BE%E6%8E%A5"><span class="toc-number">4.4.</span> <span class="toc-text"> 4.4. ln  命令创建软链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#45ip%E5%9C%B0%E5%9D%80%E5%92%8C%E4%B8%BB%E6%9C%BA%E5%90%8D"><span class="toc-number">4.5.</span> <span class="toc-text"> 4.5.IP 地址和主机名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#46%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E5%92%8C%E4%B8%8B%E8%BD%BD"><span class="toc-number">4.6.</span> <span class="toc-text"> 4.6. 网络请求和下载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#47%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93"><span class="toc-number">4.7.</span> <span class="toc-text"> 4.7. 网络传输</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#48%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="toc-number">4.8.</span> <span class="toc-text"> 4.8. 进程管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#49%E4%B8%BB%E6%9C%BA%E7%8A%B6%E6%80%81%E7%9B%91%E6%8E%A7"><span class="toc-number">4.9.</span> <span class="toc-text"> 4.9. 主机状态监控</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#410%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">4.10.</span> <span class="toc-text"> 4.10. 环境变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#411linux%E6%96%87%E4%BB%B6%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B"><span class="toc-number">4.11.</span> <span class="toc-text"> 4.11.Linux 文件的压缩和解压</span></a></li></ol></li></ol></div><div class="related panel pjax" data-title="系列文章"></div><div class="overview panel" data-title="站点概览"><div class="author" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"><img class="image" loading="lazy" decoding="async" itemprop="image" alt="hqz" src="/assets/avatar.jpg"/><p class="name" itemprop="name">hqz</p><div class="description" itemprop="description">欢迎来到刀刀的笔记空间(^_^)</div></div><nav class="state"><div class="item posts"><a href="/archives/"><span class="count">13</span><span class="name">文章</span></a></div></nav><div class="social"><a target="_blank" rel="noopener" href="https://github.com/name" class="item github" title="https:&#x2F;&#x2F;github.com&#x2F;name"><i class="ic i-github"></i></a></div><div class="menu"><li class="item"><a href="/" rel="section"><i class="ic i-home"></i>首页</a></li></div></div></div></div><ul id="quick"><li class="prev pjax"><a href="/2024/05/05/mysql/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a></li><li class="up"><i class="ic i-arrow-up"></i></li><li class="down"><i class="ic i-arrow-down"></i></li><li class="next pjax"><a href="/2023/06/08/papper/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-1/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a></li><li class="percent"></li></ul></div></div><div class="dimmer"></div></div></main><footer id="footer"><div class="inner"><div class="widgets"><div class="rpost pjax"><h2>随机文章</h2><ul><li class="item"><div class="breadcrumb"></div><span><a href="/2025/10/03/%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86/">音频处理</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/2024/05/05/linux/linux-md/">linux.md</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/2023/06/07/test/hello-world/">Hello World</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/2024/05/16/%E8%8B%B1%E8%AF%AD%E5%85%AD%E7%BA%A7%E4%BD%9C%E6%96%87/">英语六级作文</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/2024/05/06/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/2023/05/22/papper/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">未命名</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/2024/05/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/2024/05/30/c/">c++</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/2024/05/06/%E5%8A%9B%E6%89%A3/">力扣</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/2023/06/08/papper/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-1/">论文阅读</a></span></li></ul></div><div class="rpost pjax"><h2>最新评论</h2></div></div><div class="status"><div class="copyright">&copy; 2022 -<span itemprop="copyrightYear">2025</span><span class="with-love"><i class="ic i-sakura rotate"></i></span><span class="author" itemprop="copyrightHolder">hqz @ testName</span></div><div class="count"><span class="post-meta-item-icon"><i class="ic i-chart-area"></i></span><span title="站点总字数">365k 字</span><span class="post-meta-divider"> | </span><span class="post-meta-item-icon"><i class="ic i-coffee"></i></span><span title="站点阅读时长">5:32</span></div><div class="powered-by">基于 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & Theme.<a target="_blank" rel="noopener" href="https://github.com/theme-shoka-x/hexo-theme-shokaX/">ShokaX</a></div></div></div></footer></div><script data-config type="text/javascript">var LOCAL = {
     ispost: true,
         path: `2024/05/05/linux/linux-md/`,
         favicon: {
