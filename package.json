@@ -5,15 +5,16 @@
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
-    "deploy": "hexo deploy",
+    "deploy": "hexo clean && hexo g && hexo d",
     "server": "hexo server",
     "new:post": "hexo new post",
     "new:draft": "hexo new draft",
     "publish:draft": "hexo publish",
-    "publish": "sh -c 'hexo clean && hexo g && hexo d && git add -A && if ! git diff --cached --quiet; then git commit -m \"chore(blog): publish\"; else echo \"No changes to commit\"; fi && git push origin main'"
+    "publish": "sh -c 'hexo clean && hexo g && hexo d && git add -A && if ! git diff --cached --quiet; then git commit -m \"chore(blog): publish\"; else echo \"No changes to commit\"; fi && git push origin main'",
+    "theme:matery": "sh -c '([ -d themes/matery ] || git -c http.version=HTTP/1.1 clone --depth=1 https://github.com/blinkfox/hexo-theme-matery themes/matery) && sed -i \"\" \"s/^theme:.*/theme: matery/\" _config.yml'"
   },
   "hexo": {
-    "version": "7.0.0"
+    "version": "7.3.0"
   },
   "dependencies": {
     "@algolia/client-search": "^4.23.3",
@@ -31,7 +32,6 @@
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-index": "^3.0.0",
     "hexo-generator-tag": "^2.0.0",
-    "hexo-lightning-minify": "^0.1.5",
     "hexo-pagination": "^3.0.0",
     "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-multi-next-markdown-it": "^0.2.1",

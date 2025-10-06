@@ -103,7 +103,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: shokax
+theme: matery
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -121,3 +121,5 @@ math:
       # MathJax config
 
 
+twikoo:
+  js: https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js

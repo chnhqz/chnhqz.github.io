@@ -106,6 +106,12 @@ Hexo 已在 <mcfile name="_config.yml" path="/Users/huangqiuzhao/blog/_config.ym
 - 主题配置：`themes/shokax_p/_config.yml` 或主题本体的 README（若切换到 yilia / yilia-plus，更新 `theme` 并参考各主题的 `_config.yml`）
 - 常见定制项：菜单、侧边栏、页脚、评论系统、搜索等（根据主题文档与本仓依赖）
 
+试用热门主题（例如 Matery）
+- 试用 matery（一键拉取并切换）：`npm run theme:matery`
+- 预览：`npm run clean && npm run server` → 打开 `http://localhost:4000`
+- 部署：`npm run publish` 或 `npm run deploy`
+- 回滚到原主题：编辑 <mcfile name="_config.yml" path="/Users/huangqiuzhao/blog/_config.yml"></mcfile> 的 `theme` 改回 `shokax` 或你想要的主题名
+
 ## 部署（如何推送）
 部署目标与方式已经在 <mcfile name="_config.yml" path="/Users/huangqiuzhao/blog/_config.yml"></mcfile> 中配置：
 ```yaml
