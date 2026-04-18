@@ -1,0 +1,25 @@
+---
+layout: home
+
+hero:
+  name: 刀刀博客
+  text: 与其感慨路难行，不如马上出发
+  tagline: 技术学习笔记 · C/C++ · Linux · 网络 · 音视频
+  actions:
+    - theme: brand
+      text: 浏览文章
+      link: /posts/
+    - theme: alt
+      text: GitHub
+      link: https://github.com/chnhqz
+
+features:
+  - title: 💻 编程语言
+    details: C/C++ 学习笔记与实践经验
+  - title: 🖥️ 系统与网络
+    details: Linux 系统操作与计算机网络原理
+  - title: 🗄️ 数据库
+    details: MySQL 数据库学习总结
+  - title: 🎬 多媒体
+    details: 音视频处理技术探索
+---
